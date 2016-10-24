@@ -1,0 +1,6 @@
+<div id="timezoneDialog" ng-if="timezoneDialog.launchDialog">
+	<div class="content">
+		<div ng-repeat="zone in timezoneDialog.timezones" ng-click="timezoneDialog.setTimezone(zone);">{{zone}}</div>
+		<button ng-click="timezoneDialog.closeMe();">Done</button>
+	</div>
+</div>

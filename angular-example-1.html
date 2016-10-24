@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>ChartIQ Angular Example 1</title>
+
+	<!-- Include styles here -->
+	<link rel="stylesheet" type="text/css" href="css/stylesheets/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/stx-chart.css" media="screen"/>
+
+	<!-- Include angular.js -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
+
+	<!-- Include our app and other js files -->
+	<script src='require.js'></script>
+	<!-- <script data-main='../js/chartiq' src="require.js"></script> -->
+	<script src='app.js'></script>
+	<script src="./components/cq-ng-chart.js"></script>
+	<script src="./services/QuoteFeed.js"></script>
+
+</head>
+<body>
+<cq-ng-chart quotefeed="Demo"></cq-ng-chart>
+</body>
+</html>

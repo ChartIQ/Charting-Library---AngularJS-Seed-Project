@@ -1,0 +1,6 @@
+<div id="chartContainer" style="width:800px;height:500px;position:relative;">
+	<div ng-repeat="comparison in cqNgChart.stx.chart.series">
+		<div class="chartSeriesColor" style="background-color:{{comparison.parameters.color}}"></div>
+		<div class="chartSeries">{{comparison.display}}</div>
+	</div>
+</div>

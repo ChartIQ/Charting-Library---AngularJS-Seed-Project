@@ -1,0 +1,38 @@
+<div id="studyDialog" ng-if="studyDialog.launchDialog">
+	<div class="content">
+		<div class="heading">{{studyName}}</div>
+		<div id="inputs">
+			<div class="inputs" ng-repeat="input in inputs">
+				<input ng-if="input.type=='number'" type="number" ng-model="input.value">
+				<div ng-if="input.type=='number'">{{input.heading}}</div>
+			</div>
+			<div class="inputs" ng-repeat="input in inputs">
+				<input ng-if="input.type=='text'" type="text" ng-model="input.value">
+				<div ng-if="input.type=='text'">{{input.heading}}</div>
+			</div>
+			<div class="inputs" ng-repeat="input in inputs">
+				<input ng-if="input.type=='checkbox'" type="checkbox" ng-model="input.value">
+				<div ng-if="input.type=='checkbox'">{{input.heading}}</div>
+			</div>
+			<div class="inputs" ng-repeat="input in inputs">
+				<select ng-if="input.type=='select'" ng-model="input.value"></select>
+				<div ng-if="input.type=='select'">{{input.heading}}</div>
+			</div>
+		</div>
+		<div id="outputs">
+			<div class="outputs" ng-repeat="output in outputs">
+				<div ng-if="output.color" style="background-color:{{output.color}}" class="color-picker-swatch output" ng-click="studyDialog.launchColorpicker(output,this)"></div>
+				<div>{{output.heading}}</div>
+			</div>
+		</div>
+		<div id="parameters">
+			<div class="parameters" ng-repeat="param in parameters">
+				<div ng-if="param.color" style="background-color:{{param.color}}" class="color-picker-swatch param" ng-click="studyDialog.launchColorpicker(output,this)"></div>
+				<input ng-if="param.name=='studyOverZones'" type="checkbox" ng-model="param.value">
+				<input ng-if="param.name=='studyOverBought' || param.name=='studyOverSold'" type="number" ng-model="param.value">
+				<div>{{param.heading}}</div>
+			</div>
+		</div>
+		<button class="largeBtn" ng-click="studyDialog.updateStudy(inputs, outputs, parameters); studyDialog.closeMe();">Done</button>
+	</div>
+</div>

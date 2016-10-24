@@ -1,0 +1,36 @@
+<div class="nav">
+	<div class="example3" ng-if="example3"> <!-- this div is only part of example-3 -->
+		<div id="studySelect">
+			<span>{{cqNgUi.studies.selectedOption || "Add Study"}}</span>
+			<div class="menu-hover">
+				<div class="option" ng-repeat="study in cqNgUi.studies.list" ng-click="cqNgUi.launchStudyDialog(study)"><span>{{study}}</span></div>
+			</div>
+		</div>
+		<div id="themeSelect">
+			<span>Select Theme</span>
+			<div class="menu-hover">
+				<div class="option" ng-repeat="theme in cqNgUi.themes" ng-click="cqNgUi.handleThemeSelect(theme)"><span>{{theme.name}}</span></div>
+			</div>
+		</div>
+		<button ng-click="cqNgUi.launchTimezoneDialog()">Select Timezone</button>
+	</div>
+	<!-- example-2 stuff starts here -->
+	<div class="example2">
+		<input id="symbolInput" type="text" ng-model="cqNgUi.cqNgChart.symbolInput"><button ng-click="cqNgUi.cqNgChart.changeSymbol()">Set Symbol</button>
+		<div id="periodicitySelect">
+			<span>{{cqNgUi.cqNgChart.ciq.layout | periodicity:cqNgUi.periodicity.options}}</span>
+			<div class="menu-hover">
+				<div class="option" ng-repeat="periodicity in cqNgUi.periodicity.options" ng-click="cqNgUi.cqNgChart.setPeriodicity(periodicity.period, periodicity.interval)"><span>{{periodicity.label}}</span></div>
+			</div>
+		</div>
+		<div id="chartTypeSelect">
+			<span>{{cqNgUi.cqNgChart.ciq.layout | chartType:cqNgUi.chartTypes.types}}</span>
+			<div class="menu-hover">
+				<div class="option" ng-repeat="type in cqNgUi.chartTypes.types" ng-click="cqNgUi.cqNgChart.setChartType(type)"><span>{{type.label}}</span></div>
+			</div>
+		</div>
+		<button ng-click="cqNgUi.cqNgChart.toggleCrosshairs()">Crosshairs</button>
+		<input id="symbolCompareInput" type="text" ng-model="cqNgUi.cqNgChart.symbolComparison"><button ng-click="cqNgUi.cqNgChart.addComparison()">Add Comparison</button>
+	</div>
+</div>
+<cq-ng-chart quotefeed="Demo" symbol-input="AAPL" symbol-comparison=""></cq-ng-chart>
