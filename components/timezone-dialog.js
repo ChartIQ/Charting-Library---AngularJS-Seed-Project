@@ -1,10 +1,9 @@
 function TimezoneDialog($scope) {
 	var ctrl = this;
 	ctrl.launchDialog=false;
-	ctrl.timezones=CIQ.TimeZoneWidget.timeZoneMap;
+	ctrl.timezones=CIQ.timeZoneMap;
 
 	ctrl.$postLink=function(){
-		CIQ.TimeZoneWidget.init();
 		$scope.$on('showTimezoneDialog', function(event, ciq){
 			ctrl.ciq=ciq;
 			ctrl.launchDialog=true;
@@ -14,7 +13,13 @@ function TimezoneDialog($scope) {
 		ctrl.launchDialog=false;
 	};
 	ctrl.setTimezone=function(zone){
-		CIQ.TimeZoneWidget.setTimeZone(zone);
+		for(var i=0;i<CIQ.ChartEngine.registeredContainers.length;i++){
+			var stx=CIQ.ChartEngine.registeredContainers[i].stx;
+			stx.setTimeZone(stx.dataZone, zone);
+			if(stx.chart.symbol) stx.draw();
+		}
+		
+		ctrl.launchDialog=false;
 	};
 }
 
