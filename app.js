@@ -1,6 +1,6 @@
 // Configure requirejs. Otherwise the baseUrl would default to this directory
 require.config({
-	baseUrl: '../js/',
+	baseUrl: 'chartiq/js/',
 });
 
 // Define the AMD module for the library
