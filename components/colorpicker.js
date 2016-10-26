@@ -10,7 +10,7 @@ function ColorPicker($element,$rootScope,$scope) {
 			//CIQ.UI.Prototypes.Swatch.launchColorPicker();
 			//CIQ.createColorPicker($element[0].children.colorPicker.children[0], ctrl.setColor(params));
 			
-			createColorPicker(params.swatch, ctrl.setColor(params));
+			createColorPicker($element[0].children.colorPicker.children[0], ctrl.setColor(params));
 			var clicked=params.swatch;
 			var colorPickerDiv=$element[0].children.colorPicker.children[0];
 			var container=clicked.parentElement;
