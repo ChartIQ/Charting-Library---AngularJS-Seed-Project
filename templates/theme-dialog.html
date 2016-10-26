@@ -4,43 +4,43 @@
 		<div class="candles">
 			<div class="color">
 				<div>Candle Color</div>
-				<div style="background-color:{{candleDown.color}}" class="color-picker-swatch colorDown" ng-click="themeDialog.launchColorpicker($event, this)"></div>
+				<div style="background-color:{{candleDown.color}}" class="color-picker-swatch colorDown" ng-click="themeDialog.launchColorpicker('candleDown',$event)"></div>
 				<div style="background-color:{{candleUp.color}}" class="color-picker-swatch colorUp" ng-click="themeDialog.launchColorpicker('candleUp', $event)"></div>
 			</div>
 			<div class="wick">
 				<div>Candle Wick</div>
-				<div style="background-color:{{candleDown.wick}}" class="color-picker-swatch wickDown" ng-click="themeDialog.launchColorpicker($event, this)"></div>
-				<div style="background-color:{{candleUp.wick}}" class="color-picker-swatch wickUp" ng-click="themeDialog.launchColorpicker($event, this)"></div>
+				<div style="background-color:{{candleDown.wick}}" class="color-picker-swatch wickDown" ng-click="themeDialog.launchColorpicker('wickDown',$event)"></div>
+				<div style="background-color:{{candleUp.wick}}" class="color-picker-swatch wickUp" ng-click="themeDialog.launchColorpicker('wickUp',$event)"></div>
 			</div>
 			<div class="border">
 				<div>Candle Border</div>
-				<div style="background-color:{{candleDown.border}}" class="color-picker-swatch borderDown" ng-click="themeDialog.launchColorpicker($event, this)"></div>
-				<div style="background-color:{{candleUp.border}}" class="color-picker-swatch borderUp" ng-click="themeDialog.launchColorpicker($event, this)"></div>
+				<div style="background-color:{{candleDown.border}}" class="color-picker-swatch borderDown" ng-click="themeDialog.launchColorpicker('borderDown',$event)"></div>
+				<div style="background-color:{{candleUp.border}}" class="color-picker-swatch borderUp" ng-click="themeDialog.launchColorpicker('borderUp',$event)"></div>
 			</div>
 		</div>
 		<div class="lineBarChart">
 			<div>Line/Bar Chart</div>
-			<div style="background-color:{{lineBarChart.color}}" class="color-picker-swatch lineBar" ng-click="themeDialog.launchColorpicker($event, this)"></div>
+			<div style="background-color:{{lineBarChart.color}}" class="color-picker-swatch lineBar" ng-click="themeDialog.launchColorpicker('lineBar',$event)"></div>
 		</div>
 		<div class="mountainChart">
 			<div>Mountain Color</div>
-			<div style="background-color:{{mountainChart.color}}" class="color-picker-swatch mountain" ng-click="themeDialog.launchColorpicker($event, this)"></div>
+			<div style="background-color:{{mountainChart.color}}" class="color-picker-swatch mountain" ng-click="themeDialog.launchColorpicker('mountain',$event)"></div>
 		</div>
 		<div class="background">
 			<div>Background</div>
-			<div style="background-color:{{background.color}}" class="color-picker-swatch chartBackground" ng-click="themeDialog.launchColorpicker($event, this)"></div>
+			<div style="background-color:{{background.color}}" class="color-picker-swatch chartBackground" ng-click="themeDialog.launchColorpicker('chartBackground',$event)"></div>
 		</div>
 		<div class="gridLines">
 			<div>Grid Lines</div>
-			<div style="background-color:{{gridLines.color}}" class="color-picker-swatch lines" ng-click="themeDialog.launchColorpicker($event, this)"></div>
+			<div style="background-color:{{gridLines.color}}" class="color-picker-swatch lines" ng-click="themeDialog.launchColorpicker('lines',$event)"></div>
 		</div>
 		<div class="dateDividers">
 			<div>Date Dividers</div>
-			<div style="background-color:{{gridDividers.color}}" class="color-picker-swatch dividers" ng-click="themeDialog.launchColorpicker($event, this)"></div>
+			<div style="background-color:{{gridDividers.color}}" class="color-picker-swatch dividers" ng-click="themeDialog.launchColorpicker('dividers',$event)"></div>
 		</div>
 		<div class="axisText">
 			<div>Axis Text</div>
-			<div style="background-color:{{axis.color}}" class="color-picker-swatch axis" ng-click="themeDialog.launchColorpicker($event, this)"></div>
+			<div style="background-color:{{axis.color}}" class="color-picker-swatch axis" ng-click="themeDialog.launchColorpicker('axis',$event)"></div>
 		</div>
 		<input type="text" ng-model="themeDialog.customName">
 		<button class="largeBtn" ng-click="themeDialog.closeMe();">Done</button>

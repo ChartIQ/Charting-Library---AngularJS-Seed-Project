@@ -60,10 +60,10 @@ function ThemeDialog($scope, $rootScope) {
 			case 'chartBackground':
 				ctrl.themeHelper.settings.chart["Background"].color=CIQ.hexToRgba('#'+color[0]);
 				break;
-			case 'gridDividers':
+			case 'dividers':
 				ctrl.themeHelper.settings.chart["Grid Dividers"].color=CIQ.hexToRgba('#'+color[0]);
 				break;
-			case 'gridLines':
+			case 'lines':
 				ctrl.themeHelper.settings.chart["Grid Lines"].color=CIQ.hexToRgba('#'+color[0]);
 				break;
 			case 'axis':
