@@ -6,33 +6,12 @@ function ColorPicker($element,$rootScope, $scope) {
 	ctrl.launch=false;
 
 	ctrl.$postLink=function () {
-		$rootScope.$on('launchColorPicker', function(event, params){
-			//CIQ.UI.Prototypes.Swatch.launchColorPicker();
-			//CIQ.createColorPicker($element[0].children.colorPicker.children[0], ctrl.setColor(params));
-			
+		$rootScope.$on('launchColorPicker', function(event, params){			
 			createColorPicker($element[0].children.colorPicker.children[0], ctrl.setColor(params));
 			var clicked=params.swatch;
-			var colorPickerDiv=$element[0].children.colorPicker.children[0];
-			var container=clicked.parentElement;
 			
-//			attachColorPicker(clicked, $element[0], function(color){
-//				//CIQ.Comparison.colorSelection="#" + color;
-//			});
-
-			var xy=getPos(clicked);
-			var x2y2=getPos(container);
-			xy.x=xy.x-x2y2.x;
-			xy.y=xy.y-x2y2.y;
-
-			var x=xy.x+clicked.clientWidth;
-			if((x+colorPickerDiv.offsetWidth)>container.clientWidth)
-				x-=(x+colorPickerDiv.offsetWidth)-container.clientWidth+20;
-			ctrl.posLeft=x+"px";
-
-			var y=(xy.y);
-			if(y+colorPickerDiv.clientHeight>container.clientHeight)
-				y-=(y+colorPickerDiv.clientHeight)-container.clientHeight-150;
-			ctrl.posTop=y+"px";
+			ctrl.posLeft=(clicked.offsetLeft + 10) +"px";
+			ctrl.posTop=(clicked.offsetTop - 5) + "px";
 
 			ctrl.caller=clicked;
 			ctrl.launch=true;
@@ -85,42 +64,6 @@ var createColorPicker = function (div, fc) {
 		ul.appendChild(li);
 		a.onclick=clkFn(c);
 	}
-};
-
-var getPos=function(el) {
-    for (var lx=0, ly=0;
-         el;
-         lx += el.offsetLeft, ly += el.offsetTop, el = el.offsetParent);
-    return {x: lx,y: ly};
-};
-
-var attachColorPicker = function(colorClick, cpHolder, cb){
-	var closure=function(colorClick, cpHolder, cb){
-		return function(color){
-			if(cpHolder.colorPickerDiv) cpHolder.colorPickerDiv.style.display="none";
-			colorClick.style.backgroundColor="#"+color;
-			if(cb) cb(color);
-		};
-	};
-	colorClick.onclick=(function(fc, cpHolder){ return function(){
-		if(!cpHolder.colorPickerDiv){
-			cpHolder.colorPickerDiv=document.createElement("DIV");
-			cpHolder.colorPickerDiv.className="ciqColorPicker";
-			document.body.appendChild(cpHolder.colorPickerDiv);
-		}
-		createColorPicker(cpHolder.colorPickerDiv, fc);
-		cpHolder.colorPickerDiv.style.display="block";
-		var xy=getPos(this);
-		var x=xy.x+this.clientWidth;
-		if((x+cpHolder.colorPickerDiv.offsetWidth)>CIQ.pageWidth())
-			x-=(x+cpHolder.colorPickerDiv.offsetWidth)-CIQ.pageWidth()+20;
-		cpHolder.colorPickerDiv.style.left=x+"px";
-
-		var y=(xy.y);
-		if(y+cpHolder.colorPickerDiv.clientHeight>CIQ.pageHeight())
-			y-=(y+cpHolder.colorPickerDiv.clientHeight)-CIQ.pageHeight();
-		cpHolder.colorPickerDiv.style.top=y+"px";
-	};})(closure(colorClick, cpHolder, cb), cpHolder);
 };
 
 angular.module('cqNgApp').component('colorPicker', {

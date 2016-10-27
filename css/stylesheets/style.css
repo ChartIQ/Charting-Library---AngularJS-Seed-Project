@@ -64,8 +64,8 @@ html, body, div, span {
 	z-index: 32;
 	left: 0;
 	top: 0;
-	width: 100%;
-	height: 100%;
+	/*width: 100%;
+	height: 100%;*/
 }
 
 #studyDialog div.content, #themeDialog div.content, #timezoneDialog div.content{
@@ -98,6 +98,7 @@ html, body, div, span {
 .inputs input, .outputs .output, .parameters .param, #themeDialog .color-picker-swatch{
 	float:right;
 	margin-right:1em;
+	cursor: pointer;
 }
 
 .parameters input{
@@ -133,7 +134,7 @@ html, body, div, span {
 }
 
 .color-picker-options {/* This is the actual color picker container */
-	position:relative;
+	position:absolute;
 	background: #FFF;
 	width: 180px;
 	margin: 20px 0 0 0;
