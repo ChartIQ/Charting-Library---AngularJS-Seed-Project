@@ -31,10 +31,10 @@ function ThemeDialog($scope, $rootScope) {
 	};
 	ctrl.updateThemeHelper=function(color,setting){
 		switch (setting.params){
-			case 'colorUp':
+			case 'candleUp':
 				ctrl.themeHelper.settings.chartTypes["Candle/Bar"].up.color=CIQ.hexToRgba('#'+color[0]);
 				break;
-			case 'colorDown':
+			case 'candleDown':
 				ctrl.themeHelper.settings.chartTypes["Candle/Bar"].down.color=CIQ.hexToRgba('#'+color[0]);
 				break;
 			case 'wickUp':
