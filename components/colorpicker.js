@@ -3,7 +3,7 @@ function ColorPicker($element,$rootScope,$scope) {
 	ctrl.posLeft=0;
 	ctrl.posTop=0;
 	ctrl.caller=false;
-	ctrl.launch="none";
+	ctrl.launch=false;
 
 	ctrl.$postLink=function () {
 		$rootScope.$on('launchColorPicker', function(event, params){
@@ -35,24 +35,21 @@ function ColorPicker($element,$rootScope,$scope) {
 			ctrl.posTop=y+"px";
 
 			ctrl.caller=clicked;
-			ctrl.launch="block";
+			ctrl.launch=true;
 		});
 	};
 
 	ctrl.setColor=function(params){
-		console.log(params);
-		console.log(ctrl);
-		ctrl.launchDialog=false;
 		return function() {
-			//ctrl.closeMe();
 			$rootScope.$broadcast('setColorFromPicker', {color:arguments, source:ctrl.caller, params:params});
-			//console.log(ctrl.launch); //ugh whyyyy
-			ctrl.launch = 'none';
+			ctrl.closeMe();
+			console.log(ctrl.launch); //ugh whyyyy
 		};
 	};
 
 	ctrl.closeMe=function(){
-		ctrl.launch="none";
+		console.log('closing the color picker!');
+		ctrl.launch=false;
 		ctrl.posLeft=0;
 		ctrl.posTop=0;
 	};

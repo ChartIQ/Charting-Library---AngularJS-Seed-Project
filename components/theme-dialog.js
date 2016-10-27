@@ -30,8 +30,6 @@ function ThemeDialog($scope, $rootScope) {
 		});
 	};
 	ctrl.updateThemeHelper=function(color,setting){
-		console.log(color);
-		console.log(setting.params);
 		switch (setting.params){
 			case 'colorUp':
 				ctrl.themeHelper.settings.chartTypes["Candle/Bar"].up.color=CIQ.hexToRgba('#'+color[0]);

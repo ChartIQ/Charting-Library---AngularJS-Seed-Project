@@ -60,7 +60,7 @@ html, body, div, span {
 	background-color: rgba(0,0,0,0.4);
 }
 #colorPicker{
-	position: fixed;
+	position: relative;
 	z-index: 32;
 	left: 0;
 	top: 0;
