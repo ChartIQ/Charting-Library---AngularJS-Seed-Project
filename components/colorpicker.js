@@ -1,4 +1,4 @@
-function ColorPicker($element,$rootScope,$scope) {
+function ColorPicker($element,$rootScope, $scope) {
 	var ctrl = this;
 	ctrl.posLeft=0;
 	ctrl.posTop=0;
@@ -43,15 +43,15 @@ function ColorPicker($element,$rootScope,$scope) {
 		return function() {
 			$rootScope.$broadcast('setColorFromPicker', {color:arguments, source:ctrl.caller, params:params});
 			ctrl.closeMe();
-			console.log(ctrl.launch); //ugh whyyyy
 		};
 	};
 
 	ctrl.closeMe=function(){
-		console.log('closing the color picker!');
-		ctrl.launch=false;
-		ctrl.posLeft=0;
-		ctrl.posTop=0;
+		$scope.$apply(function(){
+			ctrl.launch=false;
+			ctrl.posLeft=0;
+			ctrl.posTop=0;
+		});
 	};
 }
 
