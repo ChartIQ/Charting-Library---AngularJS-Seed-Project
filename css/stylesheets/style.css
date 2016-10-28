@@ -84,6 +84,7 @@ html, body, div, span {
 }
 #colorPicker{
 	position:relative;
+	width: 200px;
 	z-index:32;
 	left:0;
 	top:0;
