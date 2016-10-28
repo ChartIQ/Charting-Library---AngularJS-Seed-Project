@@ -140,6 +140,14 @@ html, body, div, span {
 	cursor: pointer;
 }
 
+#themeDialog .theme-field-name{
+	display: inline;
+}
+
+#themeDialog .theme-save{
+	text-align: center;
+}
+
 .parameters input{
 	float:right;
 }
