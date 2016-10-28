@@ -24,7 +24,8 @@ function StudyDialog($scope, $rootScope) {
 	};
 
 	ctrl.stringify=function(nonString){
-		return nonString.toString();
+		var string=nonString.toString();
+		return string.charAt(0).toUpperCase() + string.substr(1).toLowerCase();
 	};
 
 	ctrl.updateStudyHelperColors=function(color, params){
@@ -56,7 +57,6 @@ function StudyDialog($scope, $rootScope) {
 		var currentInputs={};
 		var currentOutputs={};
 		var currentParams={};
-		console.log(params);
 		for(var i=0; i<inputs.length; i++){
 			currentInputs[inputs[i].name]=inputs[i].value;
 		}
@@ -64,7 +64,6 @@ function StudyDialog($scope, $rootScope) {
 			currentOutputs[outputs[x].name]=outputs[x].color;
 		}
 		for(var y=0; y<params.length; y++){
-			console.log(params[y]);
 			if(typeof params[y].value == "boolean") currentParams[params[y].name+'Enabled']=params[y].value;
 			else currentParams[params[y].name+'Value']=params[y].value;
 			if(params[y].color) currentParams[params[y].name+'Color']=params[y].color;
