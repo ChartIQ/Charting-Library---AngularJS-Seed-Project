@@ -71,10 +71,13 @@ function ThemeDialog($scope, $rootScope) {
 		}
 	};
 
-	ctrl.closeMe=function(){
-		var clone=CIQ.clone(ctrl.themeHelper.settings);
-		$rootScope.$broadcast('updateThemeList', clone, ctrl.customName);
-		ctrl.launchDialog=false;
+	ctrl.closeMe=function(isUpdate){
+		if(isUpdate){
+			var clone=CIQ.clone(ctrl.themeHelper.settings);
+			$rootScope.$broadcast('updateThemeList', clone, ctrl.customName);
+		}
+		
+		ctrl.launchDialog = false;
 	};
 
 	ctrl.launchColorpicker=function(setting, event){

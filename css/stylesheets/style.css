@@ -91,13 +91,20 @@ html, body, div, span {
 }
 
 #studyDialog div.content,
-#themeDialog div.content,
 #timezoneDialog div.content{
 	background-color:#fefefe;
 	margin:15% auto;
 	padding:20px;
 	border:1px solid #888;
 	width:35%;
+}
+
+#themeDialog div.content{
+	background-color:#fefefe;
+	margin:15% auto;
+	padding:20px;
+	border:1px solid #888;
+	width:20%;
 }
 
 #themeDialog .color,
