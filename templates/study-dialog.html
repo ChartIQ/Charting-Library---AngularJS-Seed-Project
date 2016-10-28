@@ -21,13 +21,13 @@
 		</div>
 		<div id="outputs">
 			<div class="outputs" ng-repeat="output in outputs">
-				<div ng-if="output.color" style="background-color:{{output.color}}" class="color-picker-swatch output" ng-click="studyDialog.launchColorpicker(output,this)"></div>
+				<div ng-if="output.color" style="background-color:{{output.color}}" class="color-picker-swatch output" ng-click="studyDialog.launchColorpicker(output,$event)"></div>
 				<div>{{output.heading}}</div>
 			</div>
 		</div>
 		<div id="parameters">
 			<div class="parameters" ng-repeat="param in parameters">
-				<div ng-if="param.color" style="background-color:{{param.color}}" class="color-picker-swatch param" ng-click="studyDialog.launchColorpicker(output,this)"></div>
+				<div ng-if="param.color" style="background-color:{{param.color}}" class="color-picker-swatch param" ng-click="studyDialog.launchColorpicker(param,$event)"></div>
 				<input ng-if="param.name=='studyOverZones'" type="checkbox" ng-model="param.value">
 				<input ng-if="param.name=='studyOverBought' || param.name=='studyOverSold'" type="number" ng-model="param.value">
 				<div>{{param.heading}}</div>

@@ -4,7 +4,7 @@ function CqNgUi($element,$scope, $rootScope){
 	ctrl.$postLink=function(){
 		$scope.example3=$element[0].baseURI.endsWith('3.html'); //part of the UI is only for example-3
 		$rootScope.$on('updateThemeList', function(event, themeObj, themeName){
-			if(themeName){
+			if(themeName){ // we aren't going to allow unnamed themes to be created
 				var duplicate=false;
 				var newTheme = {"name": themeName, "settings": themeObj};
 				for(var i=0; i<ctrl.themes.length; i++){
@@ -13,19 +13,22 @@ function CqNgUi($element,$scope, $rootScope){
 						duplicate=true;
 					}
 				}
-				if(!duplicate)
+				if(!duplicate) // if it's duplicate we are going to update the existing theme
 					ctrl.themes.push(newTheme);
 				$rootScope.$broadcast('updateTheme', newTheme);
 			}
 			else console.error("Please name your custom theme.");
 		});
 	};
-	ctrl.toggleCrosshair=function(){
-		$scope.$broadcast('toggleCrosshair');
-	};
+
 	ctrl.launchStudyDialog=function(study){
 		$rootScope.$broadcast('showStudyDialog',study, ctrl.cqNgChart.ciq);
 	};
+
+	ctrl.launchTimezoneDialog=function(){
+		$rootScope.$broadcast('showTimezoneDialog', ctrl.cqNgChart.ciq);
+	};
+
 	ctrl.handleThemeSelect=function(theme){
 		if(theme.name=="+ New Theme"){
 			$rootScope.$broadcast('showThemeDialog', ctrl.cqNgChart.ciq);
@@ -33,9 +36,6 @@ function CqNgUi($element,$scope, $rootScope){
 		else{
 			$rootScope.$broadcast('updateTheme', theme);
 		}
-	};
-	ctrl.launchTimezoneDialog=function(){
-		$rootScope.$broadcast('showTimezoneDialog', ctrl.cqNgChart.ciq);
 	};
 
 	// Data for all the menus

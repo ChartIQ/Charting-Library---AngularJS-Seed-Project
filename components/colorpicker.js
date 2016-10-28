@@ -6,7 +6,7 @@ function ColorPicker($element,$rootScope, $scope) {
 	ctrl.launch=false;
 
 	ctrl.$postLink=function () {
-		$rootScope.$on('launchColorPicker', function(event, params){			
+		$rootScope.$on('launchColorPicker', function(event, params){
 			createColorPicker($element[0].children.colorPicker.children[0], ctrl.setColor(params));
 			var clicked=params.swatch;
 			
@@ -45,8 +45,6 @@ var colorPickerColors = [
 ];
 
 var createColorPicker = function (div, fc) {
-	
-	console.log(div);
 	var colors=colorPickerColors;
 	CIQ.clearNode(div);
 	var ul=document.createElement("ul");

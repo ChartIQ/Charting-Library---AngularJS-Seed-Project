@@ -1,87 +1,123 @@
 html, body, div, span {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
-	text-align: left;
+	margin:0;
+	padding:0;
+	border:0;
+	font:inherit;
+	font-size:100%;
+	vertical-align:baseline;
+	text-align:left;
 }
 
 .nav input{
-	border: solid 1px black;
+	border:solid 1px black;
+	font: 14px Arial;
 }
 
-#studySelect, #themeSelect, #chartTypeSelect, #periodicitySelect{
+#studySelect,
+#themeSelect,
+#chartTypeSelect,
+#periodicitySelect{
 	background-color:white;
 }
 
-.example2, .example3{
+.example2,
+.example3{
 	padding:.3em 0;
 }
 
-#periodicitySelect, #chartTypeSelect, #studySelect, #themeSelect{
-	padding: 0;
-	list-style: none;
+#periodicitySelect,
+#chartTypeSelect,
+#studySelect,
+#themeSelect{
+	padding:0;
+	list-style:none;
 	border:1px solid black;
-	min-width: 100px;
-	display:inline-block;
-}
-#periodicitySelect .menu-hover .option, #chartTypeSelect .menu-hover .option, #studySelect .menu-hover .option, #themeSelect .menu-hover .option{
 	min-width:100px;
-	position: relative;
-	line-height: 21px;
-	text-align: left;
+	display:inline-block;
+	font: 14px Arial;
 }
-#periodicitySelect .menu-hover .option:hover, #chartTypeSelect .menu-hover .option:hover, #studySelect .menu-hover .option:hover, #themeSelect .menu-hover .option:hover{
-	color: #fff;
-	background: #939393;
+#periodicitySelect .menu-hover .option,
+#chartTypeSelect .menu-hover .option,
+#studySelect .menu-hover .option,
+#themeSelect .menu-hover .option{
+	min-width:100px;
+	position:relative;
+	line-height:21px;
+	text-align:left;
 }
-#periodicitySelect .menu-hover, #chartTypeSelect .menu-hover, #studySelect .menu-hover, #themeSelect .menu-hover{
-	position: absolute;
-	max-width: 100px;
-	background: #f2f2f2;
-	display: none;
-	z-index: 999;
-	left: inherit;
+#periodicitySelect .menu-hover .option:hover,
+#chartTypeSelect .menu-hover .option:hover,
+#studySelect .menu-hover .option:hover,
+#themeSelect .menu-hover .option:hover{
+	color:#fff;
+	background:#939393;
 }
-#periodicitySelect:hover .menu-hover, #chartTypeSelect:hover .menu-hover, #studySelect:hover .menu-hover, #themeSelect:hover .menu-hover{
-	display: block;
+#periodicitySelect .menu-hover,
+#chartTypeSelect .menu-hover,
+#studySelect .menu-hover,
+#themeSelect .menu-hover{
+	position:absolute;
+	max-width:100px;
+	background:#f2f2f2;
+	display:none;
+	z-index:999;
+	left:inherit;
+}
+#periodicitySelect:hover .menu-hover,
+#chartTypeSelect:hover .menu-hover,
+#studySelect:hover .menu-hover,
+#themeSelect:hover .menu-hover{
+	display:block;
 }
 
-#studyDialog, #themeDialog, #timezoneDialog{
-	position: fixed;
-	z-index: 31; /* The zoom buttons have a z-index of 30 */
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgba(0,0,0,0.4);
+#studyDialog,
+#themeDialog,
+#timezoneDialog{
+	position:fixed;
+	z-index:31; /* The zoom buttons have a z-index of 30 */
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	background-color:rgba(0,0,0,0.4);
 }
 #colorPicker{
-	position: relative;
-	z-index: 32;
-	left: 0;
-	top: 0;
-	/*width: 100%;
-	height: 100%;*/
+	position:relative;
+	z-index:32;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
 }
 
-#studyDialog div.content, #themeDialog div.content, #timezoneDialog div.content{
-	background-color: #fefefe;
-	margin: 15% auto;
-	padding: 20px;
-	border: 1px solid #888;
-	width: 40%;
+#studyDialog div.content,
+#themeDialog div.content,
+#timezoneDialog div.content{
+	background-color:#fefefe;
+	margin:15% auto;
+	padding:20px;
+	border:1px solid #888;
+	width:40%;
 }
 
-#themeDialog .color, #themeDialog .wick, #themeDialog .border, #themeDialog .lineBarChart, #themeDialog .colors,
-#themeDialog .mountainChart, #themeDialog .background, #themeDialog .gridLines, #themeDialog .dateDividers, #themeDialog .axisText{
+#themeDialog .color,
+#themeDialog .wick,
+#themeDialog .border,
+#themeDialog .lineBarChart,
+#themeDialog .colors,
+#themeDialog .mountainChart,
+#themeDialog .background,
+#themeDialog .gridLines,
+#themeDialog .dateDividers,
+#themeDialog .axisText{
 	margin-bottom:1em;
 }
 
-.content div.inputs, .content div.outputs, .content div.parameters, .content button{
+.content div.inputs,
+.content div.outputs,
+.content div.parameters,
+.content button{
 	margin-top:.5em;
 }
 
@@ -90,12 +126,15 @@ html, body, div, span {
 }
 
 .heading {
-	font-size: 14px;
-	font-weight: bold;
-	text-align: center;
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;
 }
 
-.inputs input, .outputs .output, .parameters .param, #themeDialog .color-picker-swatch{
+.inputs input,
+.outputs .output,
+.parameters .param,
+#themeDialog .color-picker-swatch{
 	float:right;
 	margin-right:1em;
 	cursor: pointer;
@@ -114,8 +153,8 @@ html, body, div, span {
 }
 
 .largeBtn{
-	font-size: 16px;
-	padding: 5px 10px 5px 10px;
+	font-size:16px;
+	padding:5px 10px 5px 10px;
 }
 
 .color-picker-swatch{
@@ -124,75 +163,66 @@ html, body, div, span {
 	width:20px;
 	border:1px solid black;
 }
-
-.hide{
-	display:none;
-}
-
-.show{
-	display:block;
-}
-
 .color-picker-options {/* This is the actual color picker container */
-	position:absolute;
-	background: #FFF;
-	width: 180px;
-	margin: 20px 0 0 0;
-	padding: 10px 5px 5px 10px;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	box-shadow: 0 1px 5px 0 rgba(0,0,0,.5);
+	position:relative;
+	background:#FFF;
+	width:180px;
+	margin:20px 0 0 0;
+	padding:10px 5px 5px 10px;
+	border:1px solid #ccc;
+	border-radius:3px;
+	box-shadow:0 1px 5px 0 rgba(0,0,0,.5);
 }
 .color-picker-options ul { /* The unordered list with all the swatches */
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	zoom: 1;
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	zoom:1;
 }
 .color-picker-options ul:after { /* Fix display in some browsers */
-	content: ".";
-	display: block;
-	height: 0;
-	visibility: hidden;
-	clear: both;
+	content:".";
+	display:block;
+	height:0;
+	visibility:hidden;
+	clear:both;
 }
 .color-picker-options ul li { /* List item containing each swatch */
-	float: left;
-	margin: 0 5px 5px 0;
+	float:left;
+	margin:0 5px 5px 0;
 }
 .color-picker-options ul li a { /* The swatches themselves */
-	display: block;
-	width: 13px;
-	height: 13px;
-	text-decoration: none;
-	text-indent: -100000px;
-	outline: 0;
-	border: 1px solid #aaa;
+	display:block;
+	width:13px;
+	height:13px;
+	text-decoration:none;
+	text-indent:-100000px;
+	outline:0;
+	border:1px solid #aaa;
 }
 .color-picker-options ul li a:hover {/* Swatch hover state */
-	border-color: #000;
+	border-color:#000;
 }
 
 button {
-	border-radius: 8px;
-	font-family: Arial;
-	color: #ffffff;
-	font-size: 12px;
-	background: #8a8a8a;
-	padding: 3px 7px 3px 7px;
-	text-decoration: none;
+	border-radius:8px;
+	font-family:Arial;
+	color:#ffffff;
+	font-size:12px;
+	background:#8a8a8a;
+	padding:3px 7px 3px 7px;
+	text-decoration:none;
 	border:none;
 }
 
 button:hover {
-	background: #6c6e70;
-	text-decoration: none;
+	background:#6c6e70;
+	text-decoration:none;
 }
 
 div.chartSeries{
 	display:block;
 	position:relative;
-	top:18px;
+	top:8px;
 	left:80px;
 }
 

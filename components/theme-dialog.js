@@ -29,6 +29,7 @@ function ThemeDialog($scope, $rootScope) {
 			ctrl.themeHelper.update();
 		});
 	};
+
 	ctrl.updateThemeHelper=function(color,setting){
 		switch (setting.params){
 			case 'candleUp':
@@ -69,11 +70,13 @@ function ThemeDialog($scope, $rootScope) {
 				break;
 		}
 	};
+
 	ctrl.closeMe=function(){
 		var clone=CIQ.clone(ctrl.themeHelper.settings);
 		$rootScope.$broadcast('updateThemeList', clone, ctrl.customName);
 		ctrl.launchDialog=false;
 	};
+
 	ctrl.launchColorpicker=function(setting, event){
 		ctrl.activeOutput['div']=event.target;
 		$rootScope.$broadcast('launchColorPicker', {
