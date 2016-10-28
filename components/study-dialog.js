@@ -7,7 +7,6 @@ function StudyDialog($scope, $rootScope) {
 	ctrl.$postLink=function(){
 		$rootScope.$on('showStudyDialog', function(event, study, ciq){
 			ctrl.studyHelper=new CIQ.Studies.DialogHelper({name:study,stx:ciq});
-			console.log(ctrl.studyHelper);
 			$scope.inputs=ctrl.studyHelper.inputs;
 			$scope.outputs=ctrl.studyHelper.outputs;
 			$scope.parameters=ctrl.studyHelper.parameters;
@@ -18,8 +17,7 @@ function StudyDialog($scope, $rootScope) {
 		});
 		$rootScope.$on('setColorFromPicker', function(event, params){
 			if(ctrl.activeOutput.div==params.source) {
-				ctrl.updateStudyHelper(params.color, params.params);
-				console.log(params);
+				ctrl.updateStudyHelperColors(params.color, params.params);
 				ctrl.activeOutput.div.style.backgroundColor=CIQ.hexToRgba('#'+params.color);
 			}
 		});
@@ -29,8 +27,7 @@ function StudyDialog($scope, $rootScope) {
 		return nonString.toString();
 	};
 
-	ctrl.updateStudyHelper=function(color, params){
-		console.log(color, params);
+	ctrl.updateStudyHelperColors=function(color, params){
 		for (var x=0; x < ctrl.studyHelper.outputs.length; x++) {
 			if (ctrl.studyHelper.outputs[x].name==params.params.name) {
 				ctrl.studyHelper.outputs[x].color='#' + color;
@@ -59,6 +56,7 @@ function StudyDialog($scope, $rootScope) {
 		var currentInputs={};
 		var currentOutputs={};
 		var currentParams={};
+		console.log(params);
 		for(var i=0; i<inputs.length; i++){
 			currentInputs[inputs[i].name]=inputs[i].value;
 		}
@@ -66,8 +64,10 @@ function StudyDialog($scope, $rootScope) {
 			currentOutputs[outputs[x].name]=outputs[x].color;
 		}
 		for(var y=0; y<params.length; y++){
-			currentParams[params[y].name+'Value']=params[y].value;
-			currentParams[params[y].name+'Color']=params[y].color;
+			console.log(params[y]);
+			if(typeof params[y].value == "boolean") currentParams[params[y].name+'Enabled']=params[y].value;
+			else currentParams[params[y].name+'Value']=params[y].value;
+			if(params[y].color) currentParams[params[y].name+'Color']=params[y].color;
 		}
 		ctrl.studyHelper.updateStudy({inputs:currentInputs, outputs:currentOutputs, parameters:currentParams});
 	};
