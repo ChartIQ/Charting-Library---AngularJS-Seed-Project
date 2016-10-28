@@ -7,6 +7,7 @@ function StudyDialog($scope, $rootScope) {
 	ctrl.$postLink=function(){
 		$rootScope.$on('showStudyDialog', function(event, study, ciq){
 			ctrl.studyHelper=new CIQ.Studies.DialogHelper({name:study,stx:ciq});
+			console.log(ctrl.studyHelper);
 			$scope.inputs=ctrl.studyHelper.inputs;
 			$scope.outputs=ctrl.studyHelper.outputs;
 			$scope.parameters=ctrl.studyHelper.parameters;
@@ -22,6 +23,10 @@ function StudyDialog($scope, $rootScope) {
 				ctrl.activeOutput.div.style.backgroundColor=CIQ.hexToRgba('#'+params.color);
 			}
 		});
+	};
+
+	ctrl.stringify=function(nonString){
+		return nonString.toString();
 	};
 
 	ctrl.updateStudyHelper=function(color, params){
