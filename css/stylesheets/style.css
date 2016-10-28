@@ -130,6 +130,7 @@ html, body, div, span {
 }
 
 .inputs input,
+.inputs select,
 .outputs .output,
 .parameters .param,
 #themeDialog .color-picker-swatch{

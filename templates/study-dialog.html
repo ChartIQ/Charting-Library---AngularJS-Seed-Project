@@ -15,7 +15,9 @@
 				<div ng-if="input.type=='checkbox'">{{input.heading}}</div>
 			</div>
 			<div class="inputs" ng-repeat="input in inputs">
-				<select ng-if="input.type=='select'" ng-model="input.value"></select>
+				<select ng-if="input.type=='select'" ng-init="value=studyDialog.stringify(input.value)" ng-model="value">
+					<option ng-repeat="option in input.options">{{option}}</option>
+				</select>
 				<div ng-if="input.type=='select'">{{input.heading}}</div>
 			</div>
 		</div>
