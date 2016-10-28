@@ -21,7 +21,7 @@ function ThemeDialog($scope, $rootScope) {
 		$rootScope.$on('setColorFromPicker', function(event, params){
 			if(ctrl.activeOutput.div==params.source) {
 				ctrl.updateThemeHelper(params.color, params.params);
-				ctrl.activeOutput.div.style.backgroundColor=CIQ.hexToRgba('#'+params.color[0]);
+				ctrl.activeOutput.div.style.backgroundColor=CIQ.hexToRgba('#'+params.color);
 			}
 		});
 		$rootScope.$on('updateTheme', function(event, theme){
@@ -33,40 +33,40 @@ function ThemeDialog($scope, $rootScope) {
 	ctrl.updateThemeHelper=function(color,setting){
 		switch (setting.params){
 			case 'candleUp':
-				ctrl.themeHelper.settings.chartTypes["Candle/Bar"].up.color=CIQ.hexToRgba('#'+color[0]);
+				ctrl.themeHelper.settings.chartTypes["Candle/Bar"].up.color=CIQ.hexToRgba('#'+color);
 				break;
 			case 'candleDown':
-				ctrl.themeHelper.settings.chartTypes["Candle/Bar"].down.color=CIQ.hexToRgba('#'+color[0]);
+				ctrl.themeHelper.settings.chartTypes["Candle/Bar"].down.color=CIQ.hexToRgba('#'+color);
 				break;
 			case 'wickUp':
-				ctrl.themeHelper.settings.chartTypes["Candle/Bar"].up.wick=CIQ.hexToRgba('#'+color[0]);
+				ctrl.themeHelper.settings.chartTypes["Candle/Bar"].up.wick=CIQ.hexToRgba('#'+color);
 				break;
 			case 'wickDown':
-				ctrl.themeHelper.settings.chartTypes["Candle/Bar"].down.wick=CIQ.hexToRgba('#'+color[0]);
+				ctrl.themeHelper.settings.chartTypes["Candle/Bar"].down.wick=CIQ.hexToRgba('#'+color);
 				break;
 			case 'borderUp':
-				ctrl.themeHelper.settings.chartTypes["Candle/Bar"].up.border=CIQ.hexToRgba('#'+color[0]);
+				ctrl.themeHelper.settings.chartTypes["Candle/Bar"].up.border=CIQ.hexToRgba('#'+color);
 				break;
 			case 'borderDown':
-				ctrl.themeHelper.settings.chartTypes["Candle/Bar"].down.border=CIQ.hexToRgba('#'+color[0]);
+				ctrl.themeHelper.settings.chartTypes["Candle/Bar"].down.border=CIQ.hexToRgba('#'+color);
 				break;
 			case 'lineBar':
-				ctrl.themeHelper.settings.chartTypes["Line"].color=CIQ.hexToRgba('#'+color[0]);
+				ctrl.themeHelper.settings.chartTypes["Line"].color=CIQ.hexToRgba('#'+color);
 				break;
 			case 'mountain':
-				ctrl.themeHelper.settings.chartTypes["Mountain"].color=CIQ.hexToRgba('#'+color[0]);
+				ctrl.themeHelper.settings.chartTypes["Mountain"].color=CIQ.hexToRgba('#'+color);
 				break;
 			case 'chartBackground':
-				ctrl.themeHelper.settings.chart["Background"].color=CIQ.hexToRgba('#'+color[0]);
+				ctrl.themeHelper.settings.chart["Background"].color=CIQ.hexToRgba('#'+color);
 				break;
 			case 'dividers':
-				ctrl.themeHelper.settings.chart["Grid Dividers"].color=CIQ.hexToRgba('#'+color[0]);
+				ctrl.themeHelper.settings.chart["Grid Dividers"].color=CIQ.hexToRgba('#'+color);
 				break;
 			case 'lines':
-				ctrl.themeHelper.settings.chart["Grid Lines"].color=CIQ.hexToRgba('#'+color[0]);
+				ctrl.themeHelper.settings.chart["Grid Lines"].color=CIQ.hexToRgba('#'+color);
 				break;
 			case 'axis':
-				ctrl.themeHelper.settings.chart["Axis Text"].color=CIQ.hexToRgba('#'+color[0]);
+				ctrl.themeHelper.settings.chart["Axis Text"].color=CIQ.hexToRgba('#'+color);
 				break;
 		}
 	};

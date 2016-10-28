@@ -18,7 +18,8 @@ function StudyDialog($scope, $rootScope) {
 		$rootScope.$on('setColorFromPicker', function(event, params){
 			if(ctrl.activeOutput.div==params.source) {
 				ctrl.updateStudyHelper(params.color, params.params);
-				ctrl.activeOutput.div.style.backgroundColor=CIQ.hexToRgba('#'+params.color[0]);
+				console.log(params);
+				ctrl.activeOutput.div.style.backgroundColor=CIQ.hexToRgba('#'+params.color);
 			}
 		});
 	};

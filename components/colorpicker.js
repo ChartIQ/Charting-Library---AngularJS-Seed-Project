@@ -20,7 +20,7 @@ function ColorPicker($element,$rootScope, $scope) {
 
 	ctrl.setColor=function(params){
 		return function() {
-			$rootScope.$broadcast('setColorFromPicker', {color:arguments, source:ctrl.caller, params:params});
+			$rootScope.$broadcast('setColorFromPicker', {color:arguments[0], source:ctrl.caller, params:params});
 			ctrl.closeMe();
 		};
 	};
