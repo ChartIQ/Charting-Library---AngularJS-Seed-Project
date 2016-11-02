@@ -22,7 +22,7 @@ function CqNgUi($element,$scope, $rootScope){
 	};
 
 	ctrl.launchStudyDialog=function(study){
-		$rootScope.$broadcast('showStudyDialog',study, ctrl.cqNgChart.ciq);
+		$rootScope.$broadcast('addStudy',study, ctrl.cqNgChart.ciq);
 	};
 
 	ctrl.launchTimezoneDialog=function(){

@@ -5,30 +5,55 @@ function StudyDialog($scope, $rootScope) {
 	ctrl.activeOutput={};
 
 	ctrl.$postLink=function(){
-		$rootScope.$on('showStudyDialog', function(event, study, ciq){
+		$rootScope.$on('addStudy', function(event, study, ciq){
+			ctrl.ciq = ciq;
+			ctrl.studyName = study;
+
 			ctrl.studyHelper=new CIQ.Studies.DialogHelper({name:study,stx:ciq});
-			$scope.inputs=ctrl.studyHelper.inputs;
-			$scope.outputs=ctrl.studyHelper.outputs;
-			$scope.parameters=ctrl.studyHelper.parameters;
-			$scope.studyId=ctrl.studyHelper.name;
-			$scope.studyName=ctrl.studyHelper.title;
-			ctrl.addStudy(ctrl.studyHelper, ciq);
-			ctrl.launchDialog=true;
+			var self = this;
+			function closure(fc){
+				return function(){
+					fc.apply(self, [study, ciq]);
+				};
+			}
+			
+			ciq.callbacks.studyOverlayEdit=closure(ctrl.showDialog);
+			ciq.callbacks.studyPanelEdit=closure(ctrl.showDialog);
+			console.log(ctrl.studyHelper);
+			
+			CIQ.Studies.addStudy(ciq,
+					ctrl.studyHelper.name,
+					ctrl.studyHelper.libraryEntry.inputs,
+					ctrl.studyHelper.libraryEntry.outputs,
+					ctrl.studyHelper.libraryEntry.parameters);
 		});
 		$rootScope.$on('setColorFromPicker', function(event, params){
 			if(ctrl.activeOutput.div==params.source) {
-				ctrl.updateStudyHelperColors(params.color, params.params);
+				ctrl.updateStudyHelper(params.color, params.params);
+				console.log(params);
 				ctrl.activeOutput.div.style.backgroundColor=CIQ.hexToRgba('#'+params.color);
 			}
 		});
 	};
-
-	ctrl.stringify=function(nonString){
-		var string=nonString.toString();
-		return string.charAt(0).toUpperCase() + string.substr(1).toLowerCase();
+	
+	ctrl.showDialog=function(study, ciq){		
+		$scope.inputs=ctrl.studyHelper.inputs;
+		$scope.outputs=ctrl.studyHelper.outputs;
+		$scope.parameters=ctrl.studyHelper.parameters;
+		$scope.studyId=ctrl.studyHelper.name;
+		$scope.studyName=ctrl.studyHelper.title;
+		
+		$scope.$apply(function(){
+			ctrl.launchDialog=true;
+		});
 	};
 
-	ctrl.updateStudyHelperColors=function(color, params){
+	ctrl.stringify=function(nonString){
+		return nonString.toString();
+	};
+
+	ctrl.updateStudyHelper=function(color, params){
+		console.log(color, params);
 		for (var x=0; x < ctrl.studyHelper.outputs.length; x++) {
 			if (ctrl.studyHelper.outputs[x].name==params.params.name) {
 				ctrl.studyHelper.outputs[x].color='#' + color;
@@ -39,14 +64,6 @@ function StudyDialog($scope, $rootScope) {
 				ctrl.studyHelper.parameters[y].color='#' + color;
 			}
 		}
-	};
-
-	ctrl.addStudy=function(params, ciq){
-		CIQ.Studies.addStudy(ciq,
-			params.name,
-			params.libraryEntry.inputs,
-			params.libraryEntry.outputs,
-			params.libraryEntry.parameters);
 	};
 
 	ctrl.closeMe=function(){
@@ -64,10 +81,10 @@ function StudyDialog($scope, $rootScope) {
 			currentOutputs[outputs[x].name]=outputs[x].color;
 		}
 		for(var y=0; y<params.length; y++){
-			if(typeof params[y].value == "boolean") currentParams[params[y].name+'Enabled']=params[y].value;
-			else currentParams[params[y].name+'Value']=params[y].value;
-			if(params[y].color) currentParams[params[y].name+'Color']=params[y].color;
+			currentParams[params[y].name+'Value']=params[y].value;
+			currentParams[params[y].name+'Color']=params[y].color;
 		}
+		
 		ctrl.studyHelper.updateStudy({inputs:currentInputs, outputs:currentOutputs, parameters:currentParams});
 	};
 
