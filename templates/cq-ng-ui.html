@@ -3,7 +3,7 @@
 		<div id="studySelect">
 			<span>{{cqNgUi.studies.selectedOption || "Add Study"}}</span>
 			<div class="menu-hover">
-				<div class="option" ng-repeat="study in cqNgUi.studies.list | orderBy:study" ng-click="cqNgUi.launchStudyDialog(study)"><span>{{study}}</span></div>
+				<div class="option" ng-repeat="study in cqNgUi.studies.list | orderBy:study" ng-click="cqNgUi.addStudy(study)"><span>{{study}}</span></div>
 			</div>
 		</div>
 		<div id="themeSelect">

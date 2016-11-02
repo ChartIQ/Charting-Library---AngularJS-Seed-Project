@@ -13,7 +13,7 @@ function CqNgUi($element,$scope, $rootScope){
 						duplicate=true;
 					}
 				}
-				if(!duplicate) // if it's duplicate we are going to update the existing theme
+				if(!duplicate) // if it's duplicate we are going to update that existing theme
 					ctrl.themes.push(newTheme);
 				$rootScope.$broadcast('updateTheme', newTheme);
 			}
@@ -21,7 +21,7 @@ function CqNgUi($element,$scope, $rootScope){
 		});
 	};
 
-	ctrl.launchStudyDialog=function(study){
+	ctrl.addStudy=function(study){
 		$rootScope.$broadcast('addStudy',study, ctrl.cqNgChart.ciq);
 	};
 
