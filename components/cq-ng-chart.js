@@ -18,7 +18,6 @@ function CqNgChart($element, quoteFeed){
 			ctrl.ciq.setAggregationType(type.type);
 		} else {
 			ctrl.ciq.setChartType(type.type);
-			ctrl.ciq.setAggregationType('ohlc');
 		}
 	};
 

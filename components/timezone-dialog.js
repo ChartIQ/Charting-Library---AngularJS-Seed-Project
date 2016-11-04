@@ -13,12 +13,8 @@ function TimezoneDialog($scope) {
 		ctrl.launchDialog=false;
 	};
 	ctrl.setTimezone=function(zone){
-		for(var i=0;i<CIQ.ChartEngine.registeredContainers.length;i++){
-			var stx=CIQ.ChartEngine.registeredContainers[i].stx;
-			stx.setTimeZone(stx.dataZone, zone);
-			if(stx.chart.symbol) stx.draw();
-		}
-		
+		ctrl.ciq.setTimeZone(ctrl.ciq.dataZone, zone);
+		if(ctrl.ciq.chart.symbol) ctrl.ciq.draw();
 		ctrl.launchDialog=false;
 	};
 }

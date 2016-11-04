@@ -6,11 +6,11 @@ function StudyDialog($scope, $rootScope) {
 
 	ctrl.$postLink=function(){
 		$rootScope.$on('addStudy', function(event, study, ciq){
-			ctrl.ciq = ciq;
-			ctrl.studyName = study;
+			ctrl.ciq=ciq;
+			ctrl.studyName=study;
 
 			ctrl.studyHelper=new CIQ.Studies.DialogHelper({name:study,stx:ciq});
-			var self = this;
+			var self=this;
 			function closure(fc){
 				return function(){
 					fc.apply(self, [study, ciq]);
@@ -19,8 +19,7 @@ function StudyDialog($scope, $rootScope) {
 			
 			ciq.callbacks.studyOverlayEdit=closure(ctrl.showDialog);
 			ciq.callbacks.studyPanelEdit=closure(ctrl.showDialog);
-			console.log(ctrl.studyHelper);
-			
+
 			CIQ.Studies.addStudy(ciq,
 					ctrl.studyHelper.name,
 					ctrl.studyHelper.libraryEntry.inputs,
@@ -30,19 +29,17 @@ function StudyDialog($scope, $rootScope) {
 		$rootScope.$on('setColorFromPicker', function(event, params){
 			if(ctrl.activeOutput.div==params.source) {
 				ctrl.updateStudyHelper(params.color, params.params);
-				console.log(params);
 				ctrl.activeOutput.div.style.backgroundColor=CIQ.hexToRgba('#'+params.color);
 			}
 		});
 	};
 	
-	ctrl.showDialog=function(study, ciq){		
+	ctrl.showDialog=function(){
 		$scope.inputs=ctrl.studyHelper.inputs;
 		$scope.outputs=ctrl.studyHelper.outputs;
 		$scope.parameters=ctrl.studyHelper.parameters;
 		$scope.studyId=ctrl.studyHelper.name;
 		$scope.studyName=ctrl.studyHelper.title;
-		
 		$scope.$apply(function(){
 			ctrl.launchDialog=true;
 		});
@@ -53,7 +50,6 @@ function StudyDialog($scope, $rootScope) {
 	};
 
 	ctrl.updateStudyHelper=function(color, params){
-		console.log(color, params);
 		for (var x=0; x < ctrl.studyHelper.outputs.length; x++) {
 			if (ctrl.studyHelper.outputs[x].name==params.params.name) {
 				ctrl.studyHelper.outputs[x].color='#' + color;
