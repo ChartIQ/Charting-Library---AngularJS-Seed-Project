@@ -76,7 +76,6 @@ function ThemeDialog($scope, $rootScope) {
 			var clone=CIQ.clone(ctrl.themeHelper.settings);
 			$rootScope.$broadcast('updateThemeList', clone, ctrl.customName);
 		}
-		
 		ctrl.launchDialog = false;
 	};
 

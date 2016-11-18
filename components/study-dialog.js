@@ -6,35 +6,26 @@ function StudyDialog($scope, $rootScope) {
 
 	ctrl.$postLink=function(){
 		$rootScope.$on('addStudy', function(event, study, ciq){
-			ctrl.ciq=ciq;
-			ctrl.studyName=study;
-
-			ctrl.studyHelper=new CIQ.Studies.DialogHelper({name:study,stx:ciq});
 			var self=this;
 			function closure(fc){
 				return function(){
-					fc.apply(self, [study, ciq]);
+					fc.apply(self, arguments);
 				};
 			}
-			
-			ciq.callbacks.studyOverlayEdit=closure(ctrl.showDialog);
+			ciq.callbacks.studyOverlayEdit=closure(ctrl.removeStudy);
 			ciq.callbacks.studyPanelEdit=closure(ctrl.showDialog);
-
-			CIQ.Studies.addStudy(ciq,
-					ctrl.studyHelper.name,
-					ctrl.studyHelper.libraryEntry.inputs,
-					ctrl.studyHelper.libraryEntry.outputs,
-					ctrl.studyHelper.libraryEntry.parameters);
+			CIQ.Studies.addStudy(ciq, study);
 		});
 		$rootScope.$on('setColorFromPicker', function(event, params){
 			if(ctrl.activeOutput.div==params.source) {
-				ctrl.updateStudyHelper(params.color, params.params);
+				ctrl.updateStudyHelperColors(params.color, params.params);
 				ctrl.activeOutput.div.style.backgroundColor=CIQ.hexToRgba('#'+params.color);
 			}
 		});
 	};
 	
-	ctrl.showDialog=function(){
+	ctrl.showDialog=function(study, ciq){
+		ctrl.studyHelper=new CIQ.Studies.DialogHelper({name:study,stx:ciq});
 		$scope.inputs=ctrl.studyHelper.inputs;
 		$scope.outputs=ctrl.studyHelper.outputs;
 		$scope.parameters=ctrl.studyHelper.parameters;
@@ -45,11 +36,15 @@ function StudyDialog($scope, $rootScope) {
 		});
 	};
 
+	ctrl.removeStudy=function(args){
+		CIQ.Studies.removeStudy(args.stx,args.sd);
+	};
+
 	ctrl.stringify=function(nonString){
 		return nonString.toString();
 	};
 
-	ctrl.updateStudyHelper=function(color, params){
+	ctrl.updateStudyHelperColors=function(color, params){
 		for (var x=0; x < ctrl.studyHelper.outputs.length; x++) {
 			if (ctrl.studyHelper.outputs[x].name==params.params.name) {
 				ctrl.studyHelper.outputs[x].color='#' + color;

@@ -14,7 +14,7 @@ function CqNgChart($element, quoteFeed){
 
 	ctrl.setChartType=function(type){
 		if((type.aggregationEdit && ctrl.ciq.layout.aggregationType != type.type) || type.type == 'heikinashi'){
-			ctrl.ciq.setChartType('candle');
+			//ctrl.ciq.setChartType('candle');
 			ctrl.ciq.setAggregationType(type.type);
 		} else {
 			ctrl.ciq.setChartType(type.type);
