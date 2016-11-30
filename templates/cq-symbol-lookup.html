@@ -1,0 +1,21 @@
+<cq-menu-wrap class="ciq-search">
+    <cq-lookup cq-keystroke-claim cq-keystroke-default>
+        <cq-lookup-input cq-no-close>
+            <input id="symbol" type="text" spellcheck="off" autocomplete="off" autocorrect="off" autocapitalize="off" name="symbol" placeholder="Enter Symbol">
+            <cq-lookup-icon></cq-lookup-icon>
+        </cq-lookup-input>
+        <cq-menu cq-no-scroll>
+            <cq-lookup-results>
+                <cq-lookup-filters cq-no-close>
+                    <cq-filter class="true">ALL</cq-filter>
+                    <cq-filter>STOCKS</cq-filter>
+                    <cq-filter>FX</cq-filter>
+                    <cq-filter>INDEXES</cq-filter>
+                    <cq-filter>FUNDS</cq-filter>
+                    <cq-filter>FUTURES</cq-filter>
+                </cq-lookup-filters>
+                <cq-scroll cq-no-close></cq-scroll>
+            </cq-lookup-results>
+        </cq-menu>
+    </cq-lookup>
+</cq-menu-wrap>

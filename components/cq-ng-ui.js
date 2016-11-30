@@ -1,6 +1,5 @@
 function CqNgUi($element,$scope, $rootScope){
 	var ctrl=this;
-
 	ctrl.$postLink=function(){
 		$scope.example3=$element[0].baseURI.endsWith('3.html'); //part of the UI is only for example-3
 		$rootScope.$on('updateThemeList', function(event, themeObj, themeName){
@@ -18,6 +17,8 @@ function CqNgUi($element,$scope, $rootScope){
 				$rootScope.$broadcast('updateTheme', newTheme);
 			}
 			else console.error("Please name your custom theme.");
+
+	
 		});
 	};
 
@@ -240,6 +241,7 @@ function CqNgUi($element,$scope, $rootScope){
 }
 
 angular.module('cqNgApp').component('cqNgUi', {
+	require: '^cqSymbolLookup',
 	controller:CqNgUi,
 	templateUrl: 'templates/cq-ng-ui.html',
 	controllerAs:'cqNgUi',

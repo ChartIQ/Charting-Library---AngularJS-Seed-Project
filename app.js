@@ -14,7 +14,7 @@ define('chartIQ', ['chartiq'], function (chartiq) {
 });
 
 // Require the AMD module then bootstrap the app after the library is loaded
-require(['chartIQ'], function(){
+require(['chartIQ', 'componentUI'], function(){
 	angular.bootstrap(document,['cqNgApp']);
 });
 

@@ -15,8 +15,7 @@
 		<button ng-click="cqNgUi.launchTimezoneDialog()">Select Timezone</button>
 	</div>
 	<!-- example-2 stuff starts here -->
-	<div class="example2">
-		<input id="symbolInput" type="text" ng-model="cqNgUi.cqNgChart.symbolInput"><button ng-click="cqNgUi.cqNgChart.changeSymbol()">Set Symbol</button>
+	<div class="example2 ciq-nav">		
 		<div id="periodicitySelect">
 			<span>{{cqNgUi.cqNgChart.ciq.layout | periodicity:cqNgUi.periodicity.options}}</span>
 			<div class="menu-hover">
@@ -32,5 +31,8 @@
 		<button ng-click="cqNgUi.cqNgChart.toggleCrosshairs()">Crosshairs</button>
 		<input id="symbolCompareInput" type="text" ng-model="cqNgUi.cqNgChart.symbolComparison"><button ng-click="cqNgUi.cqNgChart.addComparison()">Add Comparison</button>
 	</div>
+</div>
+<div class="ciq-nav">
+	<cq-symbol-lookup></cq-symbol-lookup>
 </div>
 <cq-ng-chart quotefeed="Demo" symbol-input="AAPL" symbol-comparison=""></cq-ng-chart>

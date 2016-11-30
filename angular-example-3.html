@@ -5,23 +5,27 @@
 	<!-- Include styles here -->
 	<link rel="stylesheet" type="text/css" href="css/stylesheets/style.css">
 	<link rel="stylesheet" type="text/css" href="chartiq/css/stx-chart.css" media="screen"/>
-
+	<link rel="stylesheet" href="chartiq/css/chartiq.css">
 	<!-- Include angular.js -->
 	<script data-require="angular.js@1.5.x" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
 
 	<!-- Include our app and other js files -->
 	<script src='require.js'></script>
 	<script src="app.js"></script>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+	<script src="./services/UIContext.js"></script>
 	<script src="./components/colorpicker.js"></script>
+	<script src="./components/cq-chart-title.js"></script>
 	<script src="./components/cq-ng-chart.js"></script>
 	<script src="./components/study-dialog.js"></script>
 	<script src="./components/theme-dialog.js"></script>
 	<script src="./components/timezone-dialog.js"></script>
+	<script src="./components/cq-symbol-lookup.js"></script>
 	<script src="./components/cq-ng-ui.js"></script>
 	<script src="./services/QuoteFeed.js"></script>
 
 </head>
-<body>
+<body class="break-lg" cq-context >
 <color-picker></color-picker>
 <cq-ng-ui></cq-ng-ui>
 <study-dialog></study-dialog>
