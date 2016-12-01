@@ -1,21 +1,21 @@
 # Charting-Library---Angular-1.5-Seed-Project
 
-A basic build of the ChartIQ library within the Angular 1.5.7 framework. This provides an example of how to implement the most common elements in the library. This is not a comprehensive example, more like a good starting point for an Angular developer.
+A basic build of the ChartIQ library within the Angular 1.5.7 framework. This provides an example of how to implement the most common elements in the charting library. This is not a comprehensive example, more like a good starting point for an Angular developer.
 
 ## The Structure
 
 This is broken up into three different examples.
 
 ### angular-example-1:
-	a basic chart with a preset symbol and the demo quote feed attached through an angular service.
+	Demonstrates how to implement a chart as an angular component. This example has a preset symbol and shows how to access a "quotefeed" through an angular service. (The quotefeed in this example uses fake market data. You would write a replacement quotefeed to connect with your data).
 
 ### angular-example-2:
-	example-1 with the addition of some basic UI. This UI includes an example on how to change the symbol, the periodicity, the chart type, toggle the crosshairs, and add a comparison.
+	Takes example-1 and adds some basic UI. This UI includes shows how to change the symbol, periodicity, and chart type. It demonstrates how to create a toggle control that turns crosshairs of and on. It shows how to add a comparison symbol to a chart.
 
 ### angular-example-3:
-	example-2 with the addition of slightly more advanced UI features. This UI adds examples of how to add a study, make custom themes, and change the timezone.
+	Takes example-2 and adds more advanced UI features that require user input (dialogs). This UI demonstrates how to add a study, make custom themes, and change the timezone.
 
-These examples provide a good overview of how to nest the library components and communicate between the different parts of the app using Angular.
+These examples provide a good overview of how to use ChartIQ the "Angular way". Angular components are nested and communicate with each other.
 
 ## Requirements
 
