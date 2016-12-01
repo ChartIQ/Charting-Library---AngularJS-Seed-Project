@@ -53,6 +53,11 @@ function CqNgChart($element, quoteFeed){
 		}
 	};
 
+	ctrl.removeSeries=function(seriesName){
+		console.log(seriesName);
+		ctrl.ciq.removeSeries(seriesName, ctrl.ciq.chart);
+	};
+
 	ctrl.initChart=function(){
 		ctrl.ciq=new CIQ.ChartEngine({container:$$$("#chartContainer")});
 		ctrl.attachFeed();
