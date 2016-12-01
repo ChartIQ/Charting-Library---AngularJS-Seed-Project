@@ -31,16 +31,26 @@ function CqNgChart($element, quoteFeed){
 	};
 
 	ctrl.addComparison=function(){
-		// Note that this color generator has a bias toward darker colors. Just needed a quick solution here.
-		function getRandomColor() {
-			var letters = '0123456789ABCDEF';
-			var color = '#';
-			for (var i = 0; i < 6; i++ ) {
-				color += letters[Math.floor(Math.random() * 16)];
+		if(ctrl.symbolComparison) {
+			// Note that this color generator has a bias toward darker colors. Just needed a quick solution here.
+			function getRandomColor() {
+				var letters = '0123456789ABCDEF';
+				var color = '#';
+				for (var i = 0; i < 6; i++) {
+					color += letters[Math.floor(Math.random() * 16)];
+				}
+				return color;
 			}
-			return color;
+			ctrl.ciq.addSeries(ctrl.symbolComparison, {
+				isComparison: true,
+				color: getRandomColor(),
+				data: {useDefaultQuoteFeed: true}
+			});
+			ctrl.symbolComparison=null;
 		}
-		ctrl.ciq.addSeries(ctrl.symbolComparison,{isComparison:true, color:getRandomColor(), data:{useDefaultQuoteFeed:true}});
+		else{
+			console.log("Error: no symbol for comparison entered");
+		}
 	};
 
 	ctrl.initChart=function(){
