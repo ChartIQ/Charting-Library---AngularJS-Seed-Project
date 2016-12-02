@@ -55,7 +55,6 @@ function CqNgChart($element, quoteFeed){
 	};
 
 	ctrl.removeSeries=function(seriesName){
-		console.log(seriesName);
 		ctrl.ciq.removeSeries(seriesName, ctrl.ciq.chart);
 	};
 
