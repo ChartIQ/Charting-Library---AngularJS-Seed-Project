@@ -24,7 +24,10 @@ function ThemeDialog($scope, $rootScope) {
 				ctrl.activeOutput.div.style.backgroundColor=CIQ.hexToRgba('#'+params.color);
 			}
 		});
-		$rootScope.$on('updateTheme', function(event, theme){
+		$rootScope.$on('updateTheme', function(event, theme, chart){
+			if(theme.name=="Default"){
+				ctrl.themeHelper=new CIQ.ThemeHelper({'stx':chart});
+			}
 			ctrl.themeHelper.settings=theme.settings;
 			ctrl.themeHelper.update();
 		});

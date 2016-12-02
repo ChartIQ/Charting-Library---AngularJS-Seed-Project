@@ -44,7 +44,8 @@ function CqNgChart($element, quoteFeed){
 			ctrl.ciq.addSeries(ctrl.symbolComparison, {
 				isComparison: true,
 				color: getRandomColor(),
-				data: {useDefaultQuoteFeed: true}
+				data: {useDefaultQuoteFeed: true},
+				permanent:true
 			});
 			ctrl.symbolComparison=null;
 		}

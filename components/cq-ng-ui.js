@@ -34,12 +34,22 @@ function CqNgUi($element,$scope, $rootScope){
 			$rootScope.$broadcast('showThemeDialog', ctrl.cqNgChart.ciq);
 		}
 		else{
-			$rootScope.$broadcast('updateTheme', theme);
+			$rootScope.$broadcast('updateTheme', theme, ctrl.cqNgChart.ciq);
 		}
 	};
 
 	// Data for all the menus
-	ctrl.themes=[{"name":"+ New Theme"}];
+	ctrl.themes=[{"name": "Default",
+	"settings": // the default theme settings
+		{"chart":{"Axis Text":{"color":"rgba(102,102,102,1)"},
+				"Background":{"color":"rgba(255,255,255,1)"},
+				"Grid Dividers":{"color":"rgba(204,204,204,1)"},
+				"Grid Lines":{"color":"rgba(239,239,239,1)"}},
+		"chartTypes":{"Candle/Bar":{"down": {"border":"rgba(0,0,0,1)", "color":"rgba(184,44,12,1)", "wick":"rgba(0,0,0,1)"},
+					"up":{"border":"rgba(0,0,0,1)", "color":"rgba(140,193,118,1)", "wick":"rgba(0,0,0,1)"}},
+					"Line":{"color":"rgba(0,0,0,1)"},
+					"Mountain":{"color":"rgba(102,202,196,0.498039)"}}}},
+		{"name":"+ New Theme"}];
 
 	ctrl.studies={
 		list:Object.keys(CIQ.Studies.studyLibrary),
