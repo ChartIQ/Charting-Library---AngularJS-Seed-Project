@@ -24,8 +24,8 @@ function StudyDialog($scope, $rootScope) {
 		});
 	};
 	
-	ctrl.showDialog=function(study, ciq){
-		ctrl.studyHelper=new CIQ.Studies.DialogHelper({name:study,stx:ciq});
+	ctrl.showDialog=function(params){
+		ctrl.studyHelper=new CIQ.Studies.DialogHelper({sd:params.sd,stx:params.stx});
 		$scope.inputs=ctrl.studyHelper.inputs;
 		$scope.outputs=ctrl.studyHelper.outputs;
 		$scope.parameters=ctrl.studyHelper.parameters;

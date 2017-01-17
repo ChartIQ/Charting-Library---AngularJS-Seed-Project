@@ -13,7 +13,7 @@ function CqNgUi($element,$scope, $rootScope){
 						duplicate=true;
 					}
 				}
-				if(!duplicate) // if it's duplicate we are going to update that existing theme
+				if(!duplicate) // if it's duplicate we have updated that existing theme
 					ctrl.themes.push(newTheme);
 				$rootScope.$broadcast('updateTheme', newTheme);
 			}

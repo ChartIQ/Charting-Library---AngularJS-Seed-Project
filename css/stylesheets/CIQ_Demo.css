@@ -1,0 +1,79 @@
+/* ---------------------Demo Specific CSS--------------------- */
+
+/* Button Icon Individuals */
+.ciq.newtheme-option:before {
+	content:url(../img/add.svg);
+	display: inline-block;
+	height: 9px;
+	width: 9px;
+	vertical-align: middle;
+	margin-right: 5px;
+	margin-top: -3px;
+}
+.ciq.timezone-btn:after {
+	content:url(../img/timezone.svg);
+	display: inline-block;
+	height: 12px;
+	width: 12px;
+	vertical-align: middle;
+	margin-top: -2px;
+	margin-left: 5px;
+}
+.ciq.comparison-btn:after {
+	content:url(../img/add.svg);
+	display: inline-block;
+	height: 12px;
+	width: 12px;
+	vertical-align: middle;
+	padding: 2px 0px;
+}
+.ciq.symbol-btn:after {
+	content:url(../img/search.svg);
+	display: inline-block;
+	height: 12px;
+	width: 12px;
+	vertical-align: middle;
+	padding: 2px 0px;
+}
+.ciq.crosshair-btn:after {
+	content:url(../img/crosshair.svg);
+	display: inline-block;
+	height: 12px;
+	width: 12px;
+	vertical-align: middle;
+	margin-top: -2px;
+	margin-left: 5px;
+}
+
+
+
+/* block Settings */
+.ciq.example2,
+.ciq.example3{
+	padding:.3em 0;
+}
+
+.ciq.scrolltease h3 {
+	position: relative;
+	top: 340px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 9pt;
+}
+.ciq.scrolltease h3:after {
+	display: block;
+	content:'';
+	margin: 0 auto;
+	margin-top: 5px;
+	height: 6px;
+	width: 6px;
+	background: transparent:
+	border: 0px;
+	border-right: 1px solid #444;
+	border-bottom: 1px solid #444;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}

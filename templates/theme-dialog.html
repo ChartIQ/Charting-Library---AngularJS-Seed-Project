@@ -1,51 +1,51 @@
-<div id="themeDialog" ng-if="themeDialog.launchDialog">
-	<div class="content">
-		<div class="heading">Custom Theme</div>
+<div class="ciq dialog-overlay" id="themeDialog" ng-if="themeDialog.launchDialog">
+	<div class="ciq dialog">
+		<h3>Custom Theme</h3>
 		<div class="candles">
-			<div class="color">
-				<div class="theme-field-name">Candle Color</div>
+			<div class="dialog-item color">
+				<span>Candle Color</span>
 				<div style="background-color:{{candleDown.color}}" class="color-picker-swatch colorDown" ng-click="themeDialog.launchColorpicker('candleDown',$event)"></div>
 				<div style="background-color:{{candleUp.color}}" class="color-picker-swatch colorUp" ng-click="themeDialog.launchColorpicker('candleUp', $event)"></div>
 			</div>
-			<div class="wick">
-				<div class="theme-field-name">Candle Wick</div>
+			<div class="dialog-item wick">
+				<span>Candle Wick</span>
 				<div style="background-color:{{candleDown.wick}}" class="color-picker-swatch wickDown" ng-click="themeDialog.launchColorpicker('wickDown',$event)"></div>
 				<div style="background-color:{{candleUp.wick}}" class="color-picker-swatch wickUp" ng-click="themeDialog.launchColorpicker('wickUp',$event)"></div>
 			</div>
-			<div class="border">
-				<div class="theme-field-name">Candle Border</div>
+			<div class="dialog-item border">
+				<span>Candle Border</span>
 				<div style="background-color:{{candleDown.border}}" class="color-picker-swatch borderDown" ng-click="themeDialog.launchColorpicker('borderDown',$event)"></div>
 				<div style="background-color:{{candleUp.border}}" class="color-picker-swatch borderUp" ng-click="themeDialog.launchColorpicker('borderUp',$event)"></div>
 			</div>
 		</div>
-		<div class="lineBarChart">
-			<div class="theme-field-name">Line/Bar Chart</div>
+		<div class="dialog-item lineBarChart">
+			<span>Line/Bar Chart</span>
 			<div style="background-color:{{lineBarChart.color}}" class="color-picker-swatch lineBar" ng-click="themeDialog.launchColorpicker('lineBar',$event)"></div>
 		</div>
-		<div class="mountainChart">
-			<div class="theme-field-name">Mountain Color</div>
+		<div class="dialog-item mountainChart">
+			<span>Mountain Color</span>
 			<div style="background-color:{{mountainChart.color}}" class="color-picker-swatch mountain" ng-click="themeDialog.launchColorpicker('mountain',$event)"></div>
 		</div>
-		<div class="background">
-			<div class="theme-field-name">Background</div>
+		<div class="dialog-item background">
+			<span>Background</span>
 			<div style="background-color:{{background.color}}" class="color-picker-swatch chartBackground" ng-click="themeDialog.launchColorpicker('chartBackground',$event)"></div>
 		</div>
-		<div class="gridLines">
-			<div class="theme-field-name">Grid Lines</div>
+		<div class="dialog-item gridLines">
+			<span>Grid Lines</span>
 			<div style="background-color:{{gridLines.color}}" class="color-picker-swatch lines" ng-click="themeDialog.launchColorpicker('lines',$event)"></div>
 		</div>
-		<div class="dateDividers">
-			<div class="theme-field-name">Date Dividers</div>
+		<div class="dialog-item dateDividers">
+			<span>Date Dividers</span>
 			<div style="background-color:{{gridDividers.color}}" class="color-picker-swatch dividers" ng-click="themeDialog.launchColorpicker('dividers',$event)"></div>
 		</div>
-		<div class="axisText">
-			<div class="theme-field-name">Axis Text</div>
+		<div class="dialog-item axisText">
+			<span>Axis Text</span>
 			<div style="background-color:{{axis.color}}" class="color-picker-swatch axis" ng-click="themeDialog.launchColorpicker('axis',$event)"></div>
 		</div>
-		<div class="theme-save">
-			<input type="text" ng-model="themeDialog.customName">
-			<button class="largeBtn" ng-click="themeDialog.closeMe(true);">Save</button>
-			<button class="largeBtn" ng-click="themeDialog.closeMe();">Close</button>
+		<div class="dialog-item theme-save">
+			<input class="ciq" type="text" placeholder="Name Your Theme" ng-model="themeDialog.customName">
+			<button class="pull-right ciq" ng-click="themeDialog.closeMe(true);">Save</button>
+			<button class="pull-right ciq" ng-click="themeDialog.closeMe();">Close</button>
 		</div>
 		
 	</div>
