@@ -67,9 +67,8 @@ function CqNgChart($element, quoteFeed){
 	};
 
 	ctrl.attachFeed=function(){
-		var whichFeed=$element.attr("quotefeed");
-		var qf=quoteFeed.makeFeed(whichFeed);
-		ctrl.ciq.attachQuoteFeed(qf);
+		var qf=quoteFeed.makeFeed();
+		ctrl.ciq.attachQuoteFeed(qf,{refreshInterval:1});
 	};
 }
 
