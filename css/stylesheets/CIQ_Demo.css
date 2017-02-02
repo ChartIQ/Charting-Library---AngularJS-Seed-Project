@@ -2,7 +2,7 @@
 
 /* Button Icon Individuals */
 .ciq.newtheme-option:before {
-	content:url(../img/add.svg);
+	content:url(../img/add_w.svg);
 	display: inline-block;
 	height: 9px;
 	width: 9px;
@@ -11,7 +11,7 @@
 	margin-top: -3px;
 }
 .ciq.timezone-btn:after {
-	content:url(../img/timezone.svg);
+	content:url(../img/timezone_w.svg);
 	display: inline-block;
 	height: 12px;
 	width: 12px;
@@ -20,7 +20,7 @@
 	margin-left: 5px;
 }
 .ciq.comparison-btn:after {
-	content:url(../img/add.svg);
+	content:url(../img/add_w.svg);
 	display: inline-block;
 	height: 12px;
 	width: 12px;
@@ -28,7 +28,7 @@
 	padding: 2px 0px;
 }
 .ciq.symbol-btn:after {
-	content:url(../img/search.svg);
+	content:url(../img/search_w.svg);
 	display: inline-block;
 	height: 12px;
 	width: 12px;
@@ -36,7 +36,7 @@
 	padding: 2px 0px;
 }
 .ciq.crosshair-btn:after {
-	content:url(../img/crosshair.svg);
+	content:url(../img/crosshair_w.svg);
 	display: inline-block;
 	height: 12px;
 	width: 12px;
@@ -45,12 +45,11 @@
 	margin-left: 5px;
 }
 
-
-
-/* block Settings */
-.ciq.example2,
-.ciq.example3{
-	padding:.3em 0;
+div.left{
+	float:left;
+}
+div.right{
+	float:right;
 }
 
 .ciq.scrolltease h3 {

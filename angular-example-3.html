@@ -3,9 +3,13 @@
 	<title>ChartIQ Angular 1.5 Example</title>
 
 	<!-- Include styles here -->
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+	</style>
 	<link rel="stylesheet" type="text/css" href="css/stylesheets/CIQ_Seed.css">
 	<link rel="stylesheet" type="text/css" href="css/stylesheets/CIQ_Demo.css">
 	<link rel="stylesheet" type="text/css" href="chartiq/css/stx-chart.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="chartiq/css/chartiq.css" media="screen"/> <!-- For the dark theme -->
 
 	<!-- Include angular.js -->
 	<script data-require="angular.js@1.5.x" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
@@ -23,7 +27,7 @@
 	<script src="./services/QuoteFeed.js"></script>
 
 </head>
-<body class="ciq">
+<body class="ciq-night">
 	<cq-ng-ui></cq-ng-ui>
 	<color-picker></color-picker>
 	<study-dialog></study-dialog>
