@@ -173,7 +173,7 @@ menu-select:hover menu-select-options{
 }
 .ciq.dialog {
 	background-color:#fefefe;
-	margin:15% auto;
+	margin:10% auto;
 	padding:20px 35px;
 	border:1px solid #888;
 	border-radius: 3px;
@@ -254,6 +254,7 @@ menu-select:hover menu-select-options{
 .ciq.dialog ul, .ciq.dialog li {
 	list-style: none;
 	padding-left: 0px;
+	color:#666;
 }
 .ciq#colorPicker{
 	position:relative;
@@ -264,6 +265,7 @@ menu-select:hover menu-select-options{
 }
 .dialog-item {
 	margin-bottom:1.2em;
+	color:#666;
 }
 
 .color-picker-swatch{
