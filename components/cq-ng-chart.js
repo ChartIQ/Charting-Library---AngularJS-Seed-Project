@@ -70,6 +70,17 @@ function CqNgChart($element, quoteFeed){
 		var qf=quoteFeed.makeFeed();
 		ctrl.ciq.attachQuoteFeed(qf,{refreshInterval:1});
 	};
+
+	ctrl.set=function(multiplier, span, padding){
+		var params={
+			multiplier:multiplier,
+			span:span,
+			padding:padding
+		};
+		ctrl.ciq.setSpan(params, function(){
+			console.log("span set");
+		});
+	};
 }
 
 // The chart component

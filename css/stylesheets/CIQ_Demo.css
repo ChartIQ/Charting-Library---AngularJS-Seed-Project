@@ -52,6 +52,16 @@ div.right{
 	float:right;
 }
 
+div.quick-link{
+	float:right;
+	width: 5%;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+	font-weight: 400;
+	height:100%;
+	margin-top: 10px;
+}
+
 .ciq.scrolltease h3 {
 	position: relative;
 	top: 340px;

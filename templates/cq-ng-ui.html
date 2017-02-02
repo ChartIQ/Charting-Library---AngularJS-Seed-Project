@@ -35,4 +35,14 @@
 <div class="ciq-chart-area">
 	<cq-ng-chart symbol-input="AAPL" symbol-comparison=""></cq-ng-chart>
 </div>
+<div class="ciq-footer" ng-if="example3">
+	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(1, 'all', 'month')">All</div>
+	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(5, 'year', 'week')">5y</div>
+	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(1, 'year')">1y</div>
+	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(1, 'YTD')">YTD</div>
+	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(3, 'month')">3m</div>
+	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(1, 'month', 30)">1m</div>
+	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(5, 'day', 30)">5d</div>
+	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(1, 'today')">1d</div>
+</div>
 

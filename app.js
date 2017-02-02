@@ -26,11 +26,14 @@ angular.module('cqNgApp').filter('periodicity', function(){
 	return function(chartLayout,periodicityOptions){
 		if(chartLayout) {
 			var selected;
+			console.log(periodicityOptions);
+			console.log(chartLayout);
 			for(var i=0; i<periodicityOptions.length; i++){
 				if(periodicityOptions[i].interval==chartLayout.interval && periodicityOptions[i].period==chartLayout.periodicity)
 					selected=periodicityOptions[i];
 			}
-			return selected.label;
+			if(selected)
+				return selected.label;
 		}
 	}
 });
@@ -42,7 +45,8 @@ angular.module('cqNgApp').filter('chartType', function(){
 				if(chartTypeOptions[i].type==chartLayout.chartType)
 					selected=chartTypeOptions[i];
 			}
-			return selected.label;
+			if(selected)
+				return selected.label;
 		}
 	}
 });
