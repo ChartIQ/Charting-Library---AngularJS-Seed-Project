@@ -1,0 +1,25 @@
+{
+  "name": "chartiq-angular-1.5-seed-project",
+  "version": "1.0.0",
+  "description": "Seed project demonstrating the use of ChartIQ's library with Angular 1.5.",
+  "scripts": {
+    "start": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChartIQ/Charting-Library---Angular-1.5-Seed-Project.git"
+  },
+  "keywords": [
+    "chartiq",
+    "angular"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChartIQ/Charting-Library---Angular-1.5-Seed-Project/issues"
+  },
+  "homepage": "https://github.com/ChartIQ/Charting-Library---Angular-1.5-Seed-Project#readme",
+  "devDependencies": {
+    "lite-server": "^2.2.2"
+  }
+}
