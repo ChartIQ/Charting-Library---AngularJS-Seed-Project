@@ -21,14 +21,14 @@
 				<menu-option class="option" ng-repeat="study in cqNgUi.studies.list | orderBy:study" ng-click="cqNgUi.addStudy(study)"><span>{{study}}</span></menu-option>
 			</menu-select-options>
 		</menu-select>
-		<button class="ciq crosshair-btn" ng-click="cqNgUi.cqNgChart.toggleCrosshairs()">Crosshairs</button>
+		<button class="ciq crosshair-btn" ng-click="cqNgUi.cqNgChart.toggleCrosshairs()" ng-class="{'active':cqNgUi.cqNgChart.ciq.layout.crosshair}"></button>
 		<menu-select class="ciq" id="themeSelect" ng-if="example3">
 			<span class="title">Select Theme</span>
 			<menu-select-options class="menu-hover">
 				<menu-option class="option" ng-repeat="theme in cqNgUi.themes" ng-click="cqNgUi.handleThemeSelect(theme)"><span>{{theme.name}}</span></menu-option>
 			</menu-select-options>
 		</menu-select>
-		<button class="ciq timezone-btn" ng-click="cqNgUi.launchTimezoneDialog()" ng-if="example3">Select Timezone</button>
+		<button class="ciq timezone-btn" ng-click="cqNgUi.launchTimezoneDialog()" ng-if="example3"></button>
 		<input id="symbolCompareInput" placeholder="Add Comparison" type="text" ng-model="cqNgUi.cqNgChart.symbolComparison"><button class="ciq comparison-btn" ng-click="cqNgUi.cqNgChart.addComparison()"></button>
 	</div>
 </nav>
@@ -36,13 +36,13 @@
 	<cq-ng-chart symbol-input="AAPL" symbol-comparison=""></cq-ng-chart>
 </div>
 <div class="ciq-footer" ng-if="example3">
-	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(1, 'all', 'month')">All</div>
-	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(5, 'year', 'week')">5y</div>
+	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(1, 'all')">All</div>
+	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(5, 'year')">5y</div>
 	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(1, 'year')">1y</div>
 	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(1, 'YTD')">YTD</div>
 	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(3, 'month')">3m</div>
-	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(1, 'month', 30)">1m</div>
-	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(5, 'day', 30)">5d</div>
+	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(1, 'month')">1m</div>
+	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(5, 'day')">5d</div>
 	<div class="quick-link" ng-click="cqNgUi.cqNgChart.set(1, 'today')">1d</div>
 </div>
 

@@ -71,11 +71,10 @@ function CqNgChart($element, quoteFeed){
 		ctrl.ciq.attachQuoteFeed(qf,{refreshInterval:1});
 	};
 
-	ctrl.set=function(multiplier, span, padding){
+	ctrl.set=function(multiplier, span){
 		var params={
 			multiplier:multiplier,
 			span:span,
-			padding:padding
 		};
 		ctrl.ciq.setSpan(params, function(){
 			console.log("span set");

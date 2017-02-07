@@ -16,8 +16,6 @@
 	height: 12px;
 	width: 12px;
 	vertical-align: middle;
-	margin-top: -2px;
-	margin-left: 5px;
 }
 .ciq.comparison-btn:after {
 	content:url(../img/add_w.svg);
@@ -41,8 +39,6 @@
 	height: 12px;
 	width: 12px;
 	vertical-align: middle;
-	margin-top: -2px;
-	margin-left: 5px;
 }
 
 div.left{
