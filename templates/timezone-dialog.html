@@ -1,10 +1,12 @@
 <div class="dialog-overlay" id="timezoneDialog" ng-if="timezoneDialog.launchDialog">
 	<div class="dialog timezone">
+		<div class="cq-close" ng-click="timezoneDialog.closeMe();"></div>
 		<h3 class="center">Select Timezone</h3>
+		<div ng-if="timezoneDialog.myZone" class="current-location-message">Your timezone is your current location</div>
+		<button ng-if="!timezoneDialog.myZone" class="current-location-btn" ng-click="timezoneDialog.setMyTimezone();">Use my current location</button>
 		<ul class="timezoneList">
-			<li class="dialog-item" ng-repeat="zone in timezoneDialog.timezones" ng-click="timezoneDialog.setTimezone(zone);">{{zone}}</li>
+			<li class="dialog-item" ng-repeat="zone in timezoneDialog.arrOfTimezones | orderBy:zone" ng-click="timezoneDialog.setTimezone(zone);">{{zone}}</li>
 		</ul>
 		<div class="instruct">(Scroll for more options)</div>
-		<button ng-click="timezoneDialog.closeMe();">Done</button>
 	</div>
 </div>

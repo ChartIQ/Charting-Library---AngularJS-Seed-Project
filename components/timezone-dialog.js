@@ -1,7 +1,12 @@
-function TimezoneDialog($scope) {
+function TimezoneDialog($scope, $element, $compile) {
 	var ctrl = this;
 	ctrl.launchDialog=false;
 	ctrl.timezones=CIQ.timeZoneMap;
+	//This array is needed so we can use orderBy
+	ctrl.arrOfTimezones = Object.keys(ctrl.timezones).map(function(key) {
+		return ctrl.timezones[key];
+	});
+	ctrl.myZone=true; //default behavior
 
 	ctrl.$postLink=function(){
 		$scope.$on('showTimezoneDialog', function(event, ciq){
@@ -15,8 +20,21 @@ function TimezoneDialog($scope) {
 	ctrl.setTimezone=function(zone){
 		ctrl.ciq.setTimeZone(ctrl.ciq.dataZone, zone);
 		if(ctrl.ciq.chart.symbol) ctrl.ciq.draw();
+		ctrl.myZone=false;
 		ctrl.launchDialog=false;
 	};
+	ctrl.setMyTimezone=function(){
+		ctrl.ciq.defaultDisplayTimeZone=null;
+		for(var i=0;i<CIQ.ChartEngine.registeredContainers.length;i++){
+			var stx=CIQ.ChartEngine.registeredContainers[i].stx;
+			stx.displayZone=null;
+			stx.setTimeZone();
+
+			if(stx.displayInitialized) stx.draw();
+		}
+		if(ctrl.ciq.chart.symbol) ctrl.ciq.draw();
+		ctrl.closeMe();
+	}
 }
 
 angular.module('cqNgApp').component('timezoneDialog', {
