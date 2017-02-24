@@ -1,35 +1,39 @@
 <nav class="ciq-nav">
 	<div class="left">
-		<input id="symbolInput" placeholder="Set Symbol" type="text" ng-model="cqNgUi.cqNgChart.symbolInput"><button class="ciq symbol-btn" ng-click="cqNgUi.cqNgChart.changeSymbol()"></button>
+		<span class="symbol-frame">
+			<input id="symbolInput" placeholder="Set Symbol" type="text" ng-model="cqNgUi.cqNgChart.symbolInput"><div class="symbol-btn" ng-click="cqNgUi.cqNgChart.changeSymbol()"></div>
+		</span>
+		<span class="symbol-frame">
+			<input id="symbolCompareInput" placeholder="Add Comparison" type="text" ng-model="cqNgUi.cqNgChart.symbolComparison"><div class="comparison-btn" ng-click="cqNgUi.cqNgChart.addComparison()"></div>
+		</span>
 	</div>
 	<div class="right">
-		<menu-select class="ciq" id="periodicitySelect">
+		<menu-select id="periodicitySelect">
 			<span class="title">{{cqNgUi.cqNgChart.ciq.layout | periodicity:cqNgUi.periodicity.options}}</span>
 			<menu-select-options class="menu-hover">
 				<menu-option class="option" ng-repeat="periodicity in cqNgUi.periodicity.options" ng-click="cqNgUi.cqNgChart.setPeriodicity(periodicity.period, periodicity.interval)"><span>{{periodicity.label}}</span></menu-option>
 			</menu-select-options>
 		</menu-select>
-		<menu-select class="ciq" id="chartTypeSelect">
+		<menu-select id="chartTypeSelect">
 			<span class="title">{{cqNgUi.cqNgChart.ciq.layout | chartType:cqNgUi.chartTypes.types}}</span>
 			<menu-select-options class="menu-hover">
 				<menu-option class="option" ng-repeat="type in cqNgUi.chartTypes.types" ng-click="cqNgUi.cqNgChart.setChartType(type)"><span>{{type.label}}</span></menu-option>
 			</menu-select-options>
 		</menu-select>
-		<menu-select class="ciq" id="studySelect" ng-if="example3">
+		<menu-select id="studySelect" ng-if="example3">
 			<span class="title">Studies</span>
 			<menu-select-options class="menu-hover">
 				<menu-option class="option" ng-repeat="study in cqNgUi.studies.list | orderBy:study" ng-click="cqNgUi.addStudy(study)"><span>{{study}}</span></menu-option>
 			</menu-select-options>
 		</menu-select>
-		<button class="ciq crosshair-btn" ng-click="cqNgUi.cqNgChart.toggleCrosshairs()" ng-class="{'active':cqNgUi.cqNgChart.ciq.layout.crosshair}"></button>
-		<menu-select class="ciq" id="themeSelect" ng-if="example3">
+		<menu-select id="themeSelect" ng-if="example3">
 			<span class="title">Select Theme</span>
 			<menu-select-options class="menu-hover">
 				<menu-option class="option" ng-repeat="theme in cqNgUi.themes" ng-click="cqNgUi.handleThemeSelect(theme)"><span>{{theme.name}}</span></menu-option>
 			</menu-select-options>
 		</menu-select>
-		<button class="ciq timezone-btn" ng-click="cqNgUi.launchTimezoneDialog()" ng-if="example3"></button>
-		<input id="symbolCompareInput" placeholder="Add Comparison" type="text" ng-model="cqNgUi.cqNgChart.symbolComparison"><button class="ciq comparison-btn" ng-click="cqNgUi.cqNgChart.addComparison()"></button>
+		<button class="crosshair-btn" ng-click="cqNgUi.cqNgChart.toggleCrosshairs()" ng-class="{'active':cqNgUi.cqNgChart.ciq.layout.crosshair}"></button>
+		<button class="timezone-btn" ng-click="cqNgUi.launchTimezoneDialog()" ng-if="example3"></button>
 	</div>
 </nav>
 <div class="ciq-chart-area">

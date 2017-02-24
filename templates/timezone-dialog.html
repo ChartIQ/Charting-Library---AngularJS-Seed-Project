@@ -1,9 +1,10 @@
-<div class="ciq dialog-overlay" id="timezoneDialog" ng-if="timezoneDialog.launchDialog">
-	<div class="dialog ciq">
-		<h3>Select Timezone</h3>
-		<ul class="ciq">
-			<li ng-repeat="zone in timezoneDialog.timezones" ng-click="timezoneDialog.setTimezone(zone);">{{zone}}</li>
+<div class="dialog-overlay" id="timezoneDialog" ng-if="timezoneDialog.launchDialog">
+	<div class="dialog timezone">
+		<h3 class="center">Select Timezone</h3>
+		<ul class="timezoneList">
+			<li class="dialog-item" ng-repeat="zone in timezoneDialog.timezones" ng-click="timezoneDialog.setTimezone(zone);">{{zone}}</li>
 		</ul>
+		<div class="instruct">(Scroll for more options)</div>
 		<button ng-click="timezoneDialog.closeMe();">Done</button>
 	</div>
 </div>

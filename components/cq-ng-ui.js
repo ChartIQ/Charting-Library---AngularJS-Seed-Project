@@ -39,16 +39,26 @@ function CqNgUi($element,$scope, $rootScope){
 	};
 
 	// Data for all the menus
-	ctrl.themes=[{"name": "Default",
-	"settings": // the default theme settings
-		{"chart":{"Axis Text":{"color":"rgba(102,102,102,1)"},
-				"Background":{"color":"rgba(255,255,255,1)"},
-				"Grid Dividers":{"color":"rgba(204,204,204,1)"},
-				"Grid Lines":{"color":"rgba(239,239,239,1)"}},
-		"chartTypes":{"Candle/Bar":{"down": {"border":"rgba(0,0,0,1)", "color":"rgba(184,44,12,1)", "wick":"rgba(0,0,0,1)"},
-					"up":{"border":"rgba(0,0,0,1)", "color":"rgba(140,193,118,1)", "wick":"rgba(0,0,0,1)"}},
-					"Line":{"color":"rgba(0,0,0,1)"},
-					"Mountain":{"color":"rgba(102,202,196,0.498039)"}}}},
+	ctrl.themes=[{
+		"name": "Default",
+		"settings": // the default theme settings
+			{
+				"chart": {
+					"Axis Text": { "color": "rgba(197,199,201,1)" },
+					"Background": { "color": "rgba(28,42,53,1)" },
+					"Grid Dividers": { "color": "rgba(37,55,70,1)" },
+					"Grid Lines": { "color": "rgba(33,50,63,1)" }
+				},
+				"chartTypes": {
+					"Candle/Bar": {
+						"down": { "border": "rgba(227,70,33,1)", "color": "rgba(184,44,12,1)", "wick": "rgba(0,0,0,1)" },
+						"up": { "border": "rgba(184,222,168,1)", "color": "rgba(140,193,118,1)", "wick": "rgba(0,0,0,1)" }
+					},
+					"Line": { "color": "rgba(0,0,0,1)" },
+					"Mountain": { "color": "rgba(102,202,196,0.498039)" }
+				}
+			}
+	},
 		{"name":"+ New Theme"}];
 
 	ctrl.studies={
@@ -145,31 +155,31 @@ function CqNgUi($element,$scope, $rootScope){
 		types: [
 			{
 				type: 'bar',
-				label: 'bar',
+				label: 'Bar',
 			},
 			{
 				type: 'candle',
-				label: 'candle',
+				label: 'Candle',
 			},
 			{
 				type: 'colored_bar',
-				label: 'colored bar',
+				label: 'Colored bar',
 			},
 			{
 				type: 'hollow_candle',
-				label: 'hollow candle',
+				label: 'Hollow candle',
 			},
 			{
 				type: 'line',
-				label: 'line',
+				label: 'Line',
 			},
 			{
 				type: 'mountain',
-				label: 'mountain',
+				label: 'Mountain',
 			},
 			{
 				type: 'volume_candle',
-				label: 'volume candle',
+				label: 'Volume candle',
 			},
 			{
 				type: 'heikinashi',
@@ -177,75 +187,75 @@ function CqNgUi($element,$scope, $rootScope){
 			},
 			{
 				type: 'kagi',
-				label: 'kagi',
+				label: 'Kagi',
 				aggregationEdit: {
 					title: 'Set Reversal Percentage',
 					inputs: [
 						{
 							lookup: 'kagi',
-							label: 'kagi',
+							label: 'Kagi',
 						}
 					]
 				}
 			},
 			{
 				type: 'linebreak',
-				label: 'line break',
+				label: 'Line break',
 				aggregationEdit: {
 					title: 'Set Price Lines',
 					inputs: [
 						{
 							lookup: 'priceLines',
-							label: 'price line'
+							label: 'Price line'
 						}
 					]
 				}
 			},
 			{
 				type: 'renko',
-				label: 'renko',
+				label: 'Renko',
 				aggregationEdit: {
 					title: 'Set Range',
 					inputs: [
 						{
 							lookup: 'renko',
-							label: 'renko'
+							label: 'Renko'
 						}
 					]
 				}
 			},
 			{
 				type: 'rangebars',
-				label: 'range bars',
+				label: 'Range bars',
 				aggregationEdit: {
 					title: 'Set Range',
 					inputs: [
 						{
 							lookup: 'range',
-							label: 'range'
+							label: 'Range'
 						}
 					]
 				}
 			},
 			{
 				type: 'pandf',
-				label: 'point & figure',
+				label: 'Point & Figure',
 				aggregationEdit: {
 					title: 'Set Point & Figure Parameters',
 					inputs: [
 						{
 							lookup: 'pandf.box',
-							label: 'box'
+							label: 'Box'
 						},
 						{
 							lookup: 'pandf.reversal',
-							label: 'reversal'
+							label: 'Reversal'
 						}
 					]
 				}
 			}
 		],
-		selectedOption: {type:'bar', label:'bar'}
+		selectedOption: {type:'bar', label:'Bar'}
 	};
 }
 

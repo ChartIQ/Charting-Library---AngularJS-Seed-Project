@@ -1,5 +1,5 @@
-<div class="ciq dialog-overlay" id="studyDialog" ng-if="studyDialog.launchDialog">
-	<div class="ciq dialog">
+<div class="dialog-overlay" id="studyDialog" ng-if="studyDialog.launchDialog">
+	<div class="dialog">
 		<h3>{{studyName}}</h3>
 		<div id="inputs">
 			<div class="inputs dialog-item" ng-repeat="input in inputs">
@@ -35,6 +35,6 @@
 				<div>{{param.heading}}</div>
 			</div>
 		</div>
-		<button class="pull-right ciq" ng-click="studyDialog.updateStudy(inputs, outputs, parameters); studyDialog.closeMe();">Save</button>
+		<button class="pull-right" ng-click="studyDialog.updateStudy(inputs, outputs, parameters); studyDialog.closeMe();">Save</button>
 	</div>
 </div>
