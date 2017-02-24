@@ -1,4 +1,4 @@
-function StudyDialog($scope, $rootScope) {
+function StudyDialog($scope, $rootScope, $timeout) {
 	var ctrl = this;
 	ctrl.launchDialog=false;
 	ctrl.studyHelper={};
@@ -6,15 +6,19 @@ function StudyDialog($scope, $rootScope) {
 
 	ctrl.$postLink=function(){
 		$rootScope.$on('addStudy', function(event, study, ciq){
+			ctrl.ciq=ciq;
 			var self=this;
 			function closure(fc){
 				return function(){
 					fc.apply(self, arguments);
 				};
 			}
-			ciq.callbacks.studyOverlayEdit=closure(ctrl.removeStudy);
-			ciq.callbacks.studyPanelEdit=closure(ctrl.showDialog);
+			ctrl.ciq.callbacks.studyOverlayEdit=closure(ctrl.showMenu);
+			ctrl.ciq.callbacks.studyPanelEdit=closure(ctrl.showDialog);
 			CIQ.Studies.addStudy(ciq, study);
+		});
+		$rootScope.$on('removeStudy', function(event, params){
+			ctrl.removeStudy(params);
 		});
 		$rootScope.$on('setColorFromPicker', function(event, params){
 			if(ctrl.activeOutput.div==params.source) {
@@ -22,6 +26,13 @@ function StudyDialog($scope, $rootScope) {
 				ctrl.activeOutput.div.style.backgroundColor=CIQ.hexToRgba('#'+params.color);
 			}
 		});
+		$rootScope.$on('launchStudyDialog', function(event, params){
+			ctrl.showDialog(params);
+		});
+	};
+
+	ctrl.showMenu=function(){
+		$rootScope.$broadcast('showOverlayMenu', {sd:arguments[0].sd, ciq:ctrl.ciq});
 	};
 	
 	ctrl.showDialog=function(params){
@@ -31,7 +42,7 @@ function StudyDialog($scope, $rootScope) {
 		$scope.parameters=ctrl.studyHelper.parameters;
 		$scope.studyId=ctrl.studyHelper.name;
 		$scope.studyName=ctrl.studyHelper.title;
-		$scope.$apply(function(){
+		$timeout(function(){
 			ctrl.launchDialog=true;
 		});
 	};
