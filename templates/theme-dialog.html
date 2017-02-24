@@ -1,5 +1,6 @@
 <div class="dialog-overlay" ng-if="themeDialog.launchDialog">
 	<div class="dialog">
+		<div class="cq-close" ng-click="themeDialog.closeMe();"></div>
 		<h3>Custom Theme</h3>
 		<div class="candles">
 			<div class="dialog-item color">
@@ -45,7 +46,6 @@
 		<div class="dialog-item theme-save">
 			<input type="text" placeholder="Name Your Theme" ng-model="themeDialog.customName">
 			<button class="pull-right" ng-click="themeDialog.closeMe(true);">Save</button>
-			<button class="pull-right" ng-click="themeDialog.closeMe();">Close</button>
 		</div>
 		
 	</div>

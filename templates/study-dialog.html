@@ -1,5 +1,6 @@
 <div class="dialog-overlay" id="studyDialog" ng-if="studyDialog.launchDialog">
 	<div class="dialog">
+		<div class="cq-close" ng-click="studyDialog.closeMe();"></div>
 		<h3>{{studyName}}</h3>
 		<div id="inputs">
 			<div class="inputs dialog-item" ng-repeat="input in inputs">
