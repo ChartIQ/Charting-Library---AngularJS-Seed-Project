@@ -1,5 +1,6 @@
-function CqNgChart($element, quoteFeed){
+function CqNgChart($timeout, quoteFeed){
 	var ctrl=this; //use ctrl as this for the sole purpose of consistency both in and out of the functions
+	ctrl.loader=null;
 
 	// postLink is the angular lifecycle hook that gets called after the compile function of a component
 	// read about other lifecycle hooks here: https://toddmotto.com/angular-1-5-lifecycle-hooks
@@ -8,8 +9,20 @@ function CqNgChart($element, quoteFeed){
 		ctrl.initChart();
 	};
 
+	ctrl.showLoader=function(){
+		ctrl.loader=true;
+	};
+
+	ctrl.hideLoader=function(){
+		ctrl.loader=false;
+	};
+
 	ctrl.setPeriodicity=function(period, interval){
+		ctrl.showLoader();
 		ctrl.ciq.setPeriodicityV2(period,interval);
+		$timeout(function(){
+			ctrl.hideLoader();
+		}, 1000);
 	};
 
 	ctrl.setChartType=function(type){
@@ -27,7 +40,11 @@ function CqNgChart($element, quoteFeed){
 	};
 
 	ctrl.changeSymbol=function(){
+		ctrl.showLoader();
 		ctrl.ciq.newChart(ctrl.symbolInput);
+		$timeout(function(){
+			ctrl.hideLoader();
+		}, 1000);
 	};
 
 	ctrl.addComparison=function(){
@@ -72,6 +89,7 @@ function CqNgChart($element, quoteFeed){
 	};
 
 	ctrl.set=function(multiplier, span){
+		ctrl.showLoader();
 		var params={
 			multiplier:multiplier,
 			span:span,
@@ -79,6 +97,9 @@ function CqNgChart($element, quoteFeed){
 		ctrl.ciq.setSpan(params, function(){
 			console.log("span set");
 		});
+		$timeout(function(){
+			ctrl.hideLoader();
+		}, 1000);
 	};
 
 	ctrl.updateSymbolInput=function(event){
