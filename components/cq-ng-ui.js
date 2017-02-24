@@ -13,8 +13,10 @@ function CqNgUi($element,$scope, $rootScope){
 						duplicate=true;
 					}
 				}
-				if(!duplicate) // if it's duplicate we have updated that existing theme
-					ctrl.themes.push(newTheme);
+				if(!duplicate) { // if it's duplicate we have updated that existing theme
+					ctrl.themes.splice((ctrl.themes.length-1), 0, newTheme);
+					//ctrl.themes.push(newTheme);
+				}
 				$rootScope.$broadcast('updateTheme', newTheme);
 			}
 			else console.error("Please name your custom theme.");

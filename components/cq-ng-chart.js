@@ -49,6 +49,7 @@ function CqNgChart($timeout, quoteFeed){
 
 	ctrl.addComparison=function(){
 		if(ctrl.symbolComparison) {
+			if(!ctrl.ciq.callbacks.symbolChange) ctrl.ciq.callbacks.symbolChange=this.updateComparisonSeries;
 			// Note that this color generator has a bias toward darker colors. Just needed a quick solution here.
 			function getRandomColor() {
 				var letters = '0123456789ABCDEF';
@@ -61,13 +62,22 @@ function CqNgChart($timeout, quoteFeed){
 			ctrl.ciq.addSeries(ctrl.symbolComparison, {
 				isComparison: true,
 				color: getRandomColor(),
-				data: {useDefaultQuoteFeed: true},
-				permanent:true
+				data: {useDefaultQuoteFeed: true}
 			});
 			ctrl.symbolComparison=null;
 		}
 		else{
 			console.log("Error: no symbol for comparison entered");
+		}
+	};
+
+	ctrl.updateComparisonSeries=function(){
+		if(arguments[0].action=='remove-series'){
+			var index = ctrl.ciq.chart.series.indexOf(arguments[0].symbolObject, 0);
+			if (index > -1) {
+				ctrl.ciq.chart.series.splice(index, 1);
+			}
+			ctrl.removeSeries(arguments[0].symbol);
 		}
 	};
 
