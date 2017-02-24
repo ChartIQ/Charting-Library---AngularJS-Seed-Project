@@ -80,6 +80,32 @@ function CqNgChart($element, quoteFeed){
 			console.log("span set");
 		});
 	};
+
+	ctrl.updateSymbolInput=function(event){
+		if(event.type=="click"){
+			ctrl.symbolInput=event.target.previousSibling.value;
+			ctrl.changeSymbol();
+			event.target.previousSibling.value="";
+		}
+		else if(event.type=="keypress" && event.keyCode==13){
+			ctrl.symbolInput=event.target.value;
+			ctrl.changeSymbol();
+			event.target.value="";
+		}
+	};
+
+	ctrl.updateSymbolComparison=function(event){
+		if(event.type=="click"){
+			ctrl.symbolComparison=event.target.previousSibling.value;
+			ctrl.addComparison();
+			event.target.previousSibling.value="";
+		}
+		else if(event.type=="keypress" && event.keyCode==13){
+			ctrl.symbolComparison=event.target.value;
+			ctrl.addComparison();
+			event.target.value="";
+		}
+	};
 }
 
 // The chart component

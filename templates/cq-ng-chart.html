@@ -3,7 +3,7 @@
 		<div class="comparisonWrapper" ng-repeat="comparison in cqNgChart.ciq.chart.series">
 			<div class="chartSeriesColor" style="background-color:{{comparison.parameters.color}}"></div>
 			<div class="chartSeries">{{comparison.display}}</div>
-			<div class="deleteSeries" ng-click="cqNgChart.removeSeries(comparison.display)">x</div>
+			<div class="deleteSeries" ng-click="cqNgChart.removeSeries(comparison.display)"></div>
 		</div>
 	</div>
 </div>

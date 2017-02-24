@@ -1,10 +1,10 @@
 <nav class="ciq-nav">
 	<div class="left">
 		<span class="symbol-frame">
-			<input id="symbolInput" placeholder="Set Symbol" type="text" ng-model="cqNgUi.cqNgChart.symbolInput"><div class="symbol-btn" ng-click="cqNgUi.cqNgChart.changeSymbol()"></div>
+			<input id="symbolInput" placeholder="Enter Symbol" type="text" ng-keypress="cqNgUi.cqNgChart.updateSymbolInput($event)"><div class="symbol-btn" ng-click="cqNgUi.cqNgChart.updateSymbolInput($event)"></div>
 		</span>
 		<span class="symbol-frame">
-			<input id="symbolCompareInput" placeholder="Add Comparison" type="text" ng-model="cqNgUi.cqNgChart.symbolComparison"><div class="comparison-btn" ng-click="cqNgUi.cqNgChart.addComparison()"></div>
+			<input id="symbolCompareInput" placeholder="Add Comparison" type="text" ng-keypress="cqNgUi.cqNgChart.updateSymbolComparison($event)"><div class="comparison-btn" ng-click="cqNgUi.cqNgChart.updateSymbolComparison($event)"></div>
 		</span>
 	</div>
 	<div class="right">
