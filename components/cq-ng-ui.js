@@ -15,7 +15,6 @@ function CqNgUi($element,$scope, $rootScope){
 				}
 				if(!duplicate) { // if it's duplicate we have updated that existing theme
 					ctrl.themes.splice((ctrl.themes.length-1), 0, newTheme);
-					//ctrl.themes.push(newTheme);
 				}
 				$rootScope.$broadcast('updateTheme', newTheme);
 			}

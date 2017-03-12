@@ -1,4 +1,4 @@
-function TimezoneDialog($scope, $element, $compile) {
+function TimezoneDialog($scope) {
 	var ctrl = this;
 	ctrl.launchDialog=false;
 	ctrl.timezones=CIQ.timeZoneMap;
@@ -28,6 +28,7 @@ function TimezoneDialog($scope, $element, $compile) {
 		for(var i=0;i<CIQ.ChartEngine.registeredContainers.length;i++){
 			var stx=CIQ.ChartEngine.registeredContainers[i].stx;
 			stx.displayZone=null;
+			ctrl.myZone=true;
 			stx.setTimeZone();
 
 			if(stx.displayInitialized) stx.draw();
