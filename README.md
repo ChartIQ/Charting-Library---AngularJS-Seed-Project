@@ -26,7 +26,7 @@ A copy of the ChartIQ library. To get your copy, visit https://www.chartiq.com/p
 
 ## Getting started
 
-Create two sym links to the ChartIQ library js and css folders within the chartiq directory provided here.
+Copy (or symlink) the ChartIQ library's js and css folders inside `chartiq/` as `js` and `css`, respectively.
 
 In app.js, change the baseUrl to match the path of your ChartIQ js folder. This is how require.js knows where to start looking for the required files.
 

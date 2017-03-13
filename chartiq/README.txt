@@ -1,1 +1,1 @@
-Sym link the ChartIQ library and css in this directory. 
+Copy (or symlink) the ChartIQ library's js and css folders inside this directory as "js" and "css", respectively.
