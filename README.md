@@ -30,10 +30,19 @@ Copy (or symlink) the ChartIQ library's js and css folders inside `chartiq/` as 
 
 In app.js, change the baseUrl to match the path of your ChartIQ js folder. This is how require.js knows where to start looking for the required files.
 
-```npm install```
+```sh
+npm install # This will install all dependencies
+npm start # This will start the dev server
+```
 
-```npm start```
+This browser will automatically launch with the url `http://localhost:3000/angular-example-1.html`.
+You can change the 1 in `angular-example-1.html` to preview the other examples.
+
+## Questions and support
+
+If you have questions or get stuck using this project or the ChartIQ library, the dev support team can be reached through [dev@chartiq.com](mailto:dev@chartiq.com).
 
 ## Contributing to this project
 
-If you wish to contribute to this project, please do all your work on your own branch and then submit a pull request. One of the contributors will then review the submitted code and either merge it into master or request changes from you.
+If you wish to contribute to this project, fork it and send us a pull request.
+We'd love to see what it is you want to do with our charting tools!
