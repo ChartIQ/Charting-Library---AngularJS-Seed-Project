@@ -9,6 +9,11 @@ function CqNgChart($timeout, quoteFeed){
 		ctrl.initChart();
 	};
 
+	ctrl.$onDestroy=function(){
+		// This will remove the quoteDriver, styles and eventListeners for this ChartEngine instance.
+		ctrl.ciq.destroy();
+	};
+
 	ctrl.showLoader=function(){
 		ctrl.loader=true;
 	};
