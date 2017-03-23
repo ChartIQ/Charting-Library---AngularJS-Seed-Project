@@ -11,7 +11,6 @@ function ColorPicker($element,$rootScope, $scope) {
 			var clicked=params.swatch;
 			ctrl.posLeft=clicked.offsetLeft;
 			ctrl.posTop=clicked.offsetTop-40;
-
 			ctrl.caller=clicked;
 			ctrl.launch=true;
 		});

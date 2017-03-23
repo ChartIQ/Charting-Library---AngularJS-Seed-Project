@@ -1,5 +1,6 @@
 function CqNgUi($element,$scope, $rootScope){
 	var ctrl=this;
+	ctrl.drawingEnabled=false;
 
 	ctrl.$postLink=function(){
 		$scope.example3=$element[0].baseURI.endsWith('3.html'); //part of the UI is only for example-3
@@ -28,6 +29,15 @@ function CqNgUi($element,$scope, $rootScope){
 
 	ctrl.launchTimezoneDialog=function(){
 		$rootScope.$broadcast('showTimezoneDialog', ctrl.cqNgChart.ciq);
+	};
+
+	ctrl.toggleDrawingToolbar=function(){
+		var callback=function(toolbarOn){
+			ctrl.drawingEnabled=toolbarOn;
+			//resize the chart based on if the toolbar is now open or closed TODO
+			//document.getElementById('chartContainer').style.height = (document.getElementsByClassName('ciq-chart')[0].style.height - 200 + 'px');
+		};
+		$rootScope.$broadcast('toggleDrawingToolbar', ctrl.cqNgChart.ciq, callback);
 	};
 
 	ctrl.handleThemeSelect=function(theme){

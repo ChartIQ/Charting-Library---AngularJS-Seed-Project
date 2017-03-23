@@ -34,9 +34,11 @@
 		</menu-select>
 		<button class="crosshair-btn" ng-click="cqNgUi.cqNgChart.toggleCrosshairs()" ng-class="{'active':cqNgUi.cqNgChart.ciq.layout.crosshair}"></button>
 		<button class="timezone-btn" ng-click="cqNgUi.launchTimezoneDialog()" ng-if="example3"></button>
+		<button class="drawing-toolbar-btn" ng-click="cqNgUi.toggleDrawingToolbar()" ng-if="example3" ng-class="{'active':cqNgUi.drawingEnabled}"></button>
 	</div>
 </nav>
 <div class="ciq-chart-area">
+	<drawing-toolbar></drawing-toolbar>
 	<cq-ng-chart symbol-input="AAPL" symbol-comparison=""></cq-ng-chart>
 </div>
 <div class="ciq-footer" ng-if="example3">
