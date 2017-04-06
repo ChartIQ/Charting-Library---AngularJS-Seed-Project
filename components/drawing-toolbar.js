@@ -26,6 +26,7 @@ function DrawingToolbar($rootScope, $filter) {
 				ctrl.lineColor=false;
 				ctrl.lineWidth=false;
 				ctrl.pattern=false;
+				ctrl.ciq.changeVectorType('');
 			}
 			cb(ctrl.launchToolbar);
 		});

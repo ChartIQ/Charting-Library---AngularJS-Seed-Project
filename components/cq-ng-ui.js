@@ -34,8 +34,12 @@ function CqNgUi($element,$scope, $rootScope){
 	ctrl.toggleDrawingToolbar=function(){
 		var callback=function(toolbarOn){
 			ctrl.drawingEnabled=toolbarOn;
-			//resize the chart based on if the toolbar is now open or closed TODO
-			//document.getElementById('chartContainer').style.height = (document.getElementsByClassName('ciq-chart')[0].style.height - 200 + 'px');
+			//resize the chart based on if the toolbar is now open or closed
+			var elem = document.getElementById("chartContainer");
+			if(toolbarOn)
+				elem.className += " toolbarOn";
+			else elem.classList.remove("toolbarOn");
+			ctrl.cqNgChart.ciq.draw();
 		};
 		$rootScope.$broadcast('toggleDrawingToolbar', ctrl.cqNgChart.ciq, callback);
 	};
