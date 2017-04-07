@@ -59,18 +59,18 @@ function DrawingToolbar($rootScope, $filter) {
 	};
 	ctrl.updateToolColors=function(color, settings){
 		if(settings.params=="drawingFill"){
-			ctrl.ciq.currentVectorParameters.fillColor="#"+color;
+			ctrl.ciq.changeVectorParameter("fillColor", "#"+color);
 		}
 		else if(settings.params=="drawingLine"){
-			ctrl.ciq.currentVectorParameters.currentColor="#"+color;
+			ctrl.ciq.changeVectorParameter("currentColor", "#"+color);
 		}
 	};
-	ctrl.setLinePattern=function(newClass, newWeight, newPattern){
+	ctrl.setLinePattern=function(newClass, newWidth, newPattern){
 		// Set the info for the toolbar menu
 		ctrl.selectedLineClass=newClass;
 		// Activate the new parameters
-		ctrl.ciq.currentVectorParameters.lineWidth=newWeight;
-		ctrl.ciq.currentVectorParameters.pattern=newPattern;
+		ctrl.ciq.changeVectorParameter("lineWidth", newWidth);
+		ctrl.ciq.changeVectorParameter("pattern", newPattern);
 	}
 }
 
