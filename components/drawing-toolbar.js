@@ -13,7 +13,7 @@ function DrawingToolbar($rootScope, $filter) {
 	ctrl.lineColor=false;
 	ctrl.lineWidth=false;
 	ctrl.pattern=false;
-	ctrl.selectedLineClass="ciq-solid-1";
+	ctrl.selectedLineClass=false;
 
 	ctrl.$postLink=function(){
 		$rootScope.$on('toggleDrawingToolbar', function(event, ciq, cb){
@@ -46,6 +46,7 @@ function DrawingToolbar($rootScope, $filter) {
 		else ctrl.lineColor=ctrl.toolParams.color;
 		ctrl.lineWidth=ctrl.toolParams.lineWidth;
 		ctrl.pattern=ctrl.toolParams.pattern;
+		ctrl.selectedLineClass="ciq-" + ctrl.pattern + '-' + ctrl.lineWidth;
 		// Activate the tool
 		ctrl.ciq.changeVectorType(tool);
 	};

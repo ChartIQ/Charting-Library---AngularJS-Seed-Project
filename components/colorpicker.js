@@ -10,7 +10,7 @@ function ColorPicker($element,$rootScope, $scope) {
 			createColorPicker($element[0].children.colorPicker.children[0], ctrl.setColor(params));
 			var clicked=params.swatch;
 			ctrl.posLeft=clicked.offsetLeft;
-			ctrl.posTop=clicked.offsetTop-40;
+			ctrl.posTop=clicked.offsetHeight;
 			ctrl.caller=clicked;
 			ctrl.launch=true;
 		});
