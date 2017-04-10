@@ -22,7 +22,7 @@ These examples provide a good overview of how to use ChartIQ the "Angular way". 
 
 ## Requirements
 
-A copy of the ChartIQ library. To get your copy, visit https://www.chartiq.com/products/html5-charting-library/ to see a demo and get in touch with us.
+A copy of the ChartIQ library, version 3.0+ is required for this to work out of the box. To get your copy, visit https://www.chartiq.com/products/html5-charting-library/ to see a demo and get in touch with us.
 
 ## Getting started
 
