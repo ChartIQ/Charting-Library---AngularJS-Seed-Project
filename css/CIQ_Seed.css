@@ -302,8 +302,15 @@ menu-select-options{
 	min-width:100px;
 }
 
+#fontFamilySelect menu-select-options {
+	min-width: 130px;
+}
 
-menu-select:hover menu-select-options{
+#fontSizeSelect menu-select-options {
+	min-width: 60px;
+}
+
+menu-select:hover menu-select-options {
 	display:block;
 	padding: 10px 0 10px 0;
 }
@@ -541,8 +548,24 @@ div.loader{
 .drawingParameters{
 	padding:5px;
 	margin-left:10px;
-	width: 200px;
+	width: 415px;
 	display: flex;
+}
+
+.boldBtn, .italicBtn{
+	display: inline-block;
+	min-width: 25px;
+	cursor: pointer;
+	color: #c5c7c9;
+	transition: color .20s 0s;
+}
+
+.boldBtn:hover, .italicBtn:hover{
+	color:#fff;
+}
+
+.italicBtn{
+	font-family: serif;
 }
 
 #lineSelect{
