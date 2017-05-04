@@ -24,7 +24,7 @@
 				</menu-select-options>
 			</menu-select>
 		</div>
-		<div ng-if="drawingToolbar.fontSize && drawingToolbar.fontFamily">
+		<div ng-if="drawingToolbar.selectedTool=='Callout' || drawingToolbar.selectedTool=='Annotation'">
 			<div class="italicBtn" ng-click="drawingToolbar.toggleStyle('italic')" style="font-style:italic">I</div>
 			<div class="boldBtn" ng-click="drawingToolbar.toggleStyle('bold')" style="font-weight:bold">B</div>
 			<menu-select id="fontSizeSelect">
