@@ -18,8 +18,9 @@ function DrawingToolbar($rootScope, $filter) {
 	ctrl.fontFamily="Helvetica"; //defaults
 	ctrl.fontSizeOptions=[8, 10, 12, 13, 14, 16, 20, 28, 36, 48, 64];
 	ctrl.fontFamilyOptions=["Helvetica", "Courier", "Garamond", "Palatino", "Times New Roman"];
-	ctrl.bold="normal";
-	ctrl.italic="normal";
+	ctrl.bold=false;
+	ctrl.italic=false;
+	ctrl.showFontOptions=false;
 
 	ctrl.$postLink=function(){
 		$rootScope.$on('toggleDrawingToolbar', function(event, ciq, cb){
@@ -55,15 +56,14 @@ function DrawingToolbar($rootScope, $filter) {
 			var size = style.fontSize;
 			ctrl.ciq.currentVectorParameters.annotation.font.size=size;
 			ctrl.fontSize = size;
-
 			ctrl.ciq.currentVectorParameters.annotation.font.family=style.fontFamily;
 			ctrl.fontFamily = style.fontFamily;
-
 			ctrl.ciq.currentVectorParameters.annotation.font.style=style.fontStyle;
-			ctrl.italic=style.fontStyle;
-
 			ctrl.ciq.currentVectorParameters.annotation.font.weight=style.fontWeight;
-			ctrl.bold=style.fontWeight;
+			ctrl.showFontOptions=true;
+		}
+		else{
+			ctrl.showFontOptions=false;
 		}
 		ctrl.fillColor=ctrl.toolParams.fillColor;
 		if(ctrl.toolParams.color=="auto") ctrl.lineColor="white";
@@ -107,23 +107,23 @@ function DrawingToolbar($rootScope, $filter) {
 	};
 	ctrl.toggleStyle=function(newStyle){
 		if(newStyle=='bold'){
-			if(ctrl.bold=="normal"){
+			if(!ctrl.bold){
 				ctrl.ciq.changeVectorParameter("fontWeight", "bold");
-				ctrl.bold="bold";
+				ctrl.bold=true;
 			}
 			else{
 				ctrl.ciq.changeVectorParameter("fontWeight", "normal");
-				ctrl.bold="normal";
+				ctrl.bold=false;
 			}
 		}
 		else if(newStyle=='italic'){
-			if(ctrl.italic=="normal"){
+			if(!ctrl.italic){
 				ctrl.ciq.changeVectorParameter("fontStyle", "italic");
-				ctrl.italic="italic";
+				ctrl.italic=true;
 			}
 			else{
 				ctrl.ciq.changeVectorParameter("fontStyle", "normal");
-				ctrl.italic="normal";
+				ctrl.italic=false;
 			}
 		}
 	}
