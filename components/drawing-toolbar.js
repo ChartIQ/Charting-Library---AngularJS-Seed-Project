@@ -14,6 +14,13 @@ function DrawingToolbar($rootScope, $filter) {
 	ctrl.lineWidth=false;
 	ctrl.pattern=false;
 	ctrl.selectedLineClass=false;
+	ctrl.fontSize=13;
+	ctrl.fontFamily="Helvetica"; //defaults
+	ctrl.fontSizeOptions=[8, 10, 12, 13, 14, 16, 20, 28, 36, 48, 64];
+	ctrl.fontFamilyOptions=["Helvetica", "Courier", "Garamond", "Palatino", "Times New Roman"];
+	ctrl.bold=false;
+	ctrl.italic=false;
+	ctrl.showFontOptions=false;
 
 	ctrl.$postLink=function(){
 		$rootScope.$on('toggleDrawingToolbar', function(event, ciq, cb){
@@ -41,6 +48,23 @@ function DrawingToolbar($rootScope, $filter) {
 		// Set all the info for the toolbar
 		ctrl.selectedTool=$filter('titlecase')(tool);
 		ctrl.toolParams = CIQ.Drawing.getDrawingParameters(ctrl.ciq, tool);
+
+		if(tool=='callout' || tool=='annotation') { // no need to do this every time
+			// Sync the defaults for font tool
+			var style = ctrl.ciq.canvasStyle("stx_annotation");
+
+			var size = style.fontSize;
+			ctrl.ciq.currentVectorParameters.annotation.font.size=size;
+			ctrl.fontSize = size;
+			ctrl.ciq.currentVectorParameters.annotation.font.family=style.fontFamily;
+			ctrl.fontFamily = style.fontFamily;
+			ctrl.ciq.currentVectorParameters.annotation.font.style=style.fontStyle;
+			ctrl.ciq.currentVectorParameters.annotation.font.weight=style.fontWeight;
+			ctrl.showFontOptions=true;
+		}
+		else{
+			ctrl.showFontOptions=false;
+		}
 		ctrl.fillColor=ctrl.toolParams.fillColor;
 		if(ctrl.toolParams.color=="auto") ctrl.lineColor="white";
 		else ctrl.lineColor=ctrl.toolParams.color;
@@ -72,6 +96,36 @@ function DrawingToolbar($rootScope, $filter) {
 		// Activate the new parameters
 		ctrl.ciq.changeVectorParameter("lineWidth", newWidth);
 		ctrl.ciq.changeVectorParameter("pattern", newPattern);
+	};
+	ctrl.setFontSize=function(newSize){
+		ctrl.fontSize=newSize+'px';
+		ctrl.ciq.changeVectorParameter("fontSize", newSize+'px');
+	};
+	ctrl.setFontFamily=function(newFamily){
+		ctrl.fontFamily=newFamily;
+		ctrl.ciq.changeVectorParameter("fontFamily", newFamily);
+	};
+	ctrl.toggleStyle=function(newStyle){
+		if(newStyle=='bold'){
+			if(!ctrl.bold){
+				ctrl.ciq.changeVectorParameter("fontWeight", "bold");
+				ctrl.bold=true;
+			}
+			else{
+				ctrl.ciq.changeVectorParameter("fontWeight", "normal");
+				ctrl.bold=false;
+			}
+		}
+		else if(newStyle=='italic'){
+			if(!ctrl.italic){
+				ctrl.ciq.changeVectorParameter("fontStyle", "italic");
+				ctrl.italic=true;
+			}
+			else{
+				ctrl.ciq.changeVectorParameter("fontStyle", "normal");
+				ctrl.italic=false;
+			}
+		}
 	}
 }
 

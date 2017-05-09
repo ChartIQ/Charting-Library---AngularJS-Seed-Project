@@ -24,5 +24,21 @@
 				</menu-select-options>
 			</menu-select>
 		</div>
+		<div ng-if="drawingToolbar.showFontOptions">
+			<div class="italicBtn" ng-click="drawingToolbar.toggleStyle('italic')">I</div>
+			<div class="boldBtn" ng-click="drawingToolbar.toggleStyle('bold')">B</div>
+			<menu-select id="fontSizeSelect">
+				<span class="title">{{drawingToolbar.fontSize}}</span>
+				<menu-select-options class="menu-hover">
+					<menu-option class="option" ng-repeat="option in drawingToolbar.fontSizeOptions" ng-click="drawingToolbar.setFontSize(option)"><span>{{option}}</span></menu-option>
+				</menu-select-options>
+			</menu-select>
+			<menu-select id="fontFamilySelect">
+				<span class="title">{{drawingToolbar.fontFamily}}</span>
+				<menu-select-options class="menu-hover">
+					<menu-option class="option" ng-repeat="option in drawingToolbar.fontFamilyOptions" ng-click="drawingToolbar.setFontFamily(option)"><span ng-attr-style="font-family: {{option}}">{{option}}</span></menu-option>
+				</menu-select-options>
+			</menu-select>
+		</div>
 	</div>
 </div>
