@@ -22,7 +22,7 @@ require(['chartIQ'], function(){
 angular.module('cqNgApp', []);
 
 // Here are all the filters used in the app
-angular.module('cqNgApp').filter('periodicity', function(){
+angular.module('cqNgApp').filter('periodicity', [function(){
 	return function(chartLayout,periodicityOptions){
 		if(chartLayout) {
 			var selected;
@@ -32,9 +32,9 @@ angular.module('cqNgApp').filter('periodicity', function(){
 			}
 			return selected.label;
 		}
-	}
-});
-angular.module('cqNgApp').filter('chartType', function(){
+	};
+}]);
+angular.module('cqNgApp').filter('chartType', [function(){
 	return function(chartLayout,chartTypeOptions){
 		if(chartLayout) {
 			var selected;
@@ -44,9 +44,9 @@ angular.module('cqNgApp').filter('chartType', function(){
 			}
 			return selected.label;
 		}
-	}
-});
-angular.module('cqNgApp').filter('titlecase', function() {
+	};
+}]);
+angular.module('cqNgApp').filter('titlecase', [function() {
 	return function (input) {
 		var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via)$/i;
 
@@ -65,5 +65,5 @@ angular.module('cqNgApp').filter('titlecase', function() {
 
 			return match.charAt(0).toUpperCase() + match.substr(1);
 		});
-	}
-});
+	};
+}]);

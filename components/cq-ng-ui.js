@@ -1,3 +1,5 @@
+CqNgUi.$inject = ['$element', '$scope', '$rootScope'];
+
 function CqNgUi($element,$scope, $rootScope){
 	var ctrl=this;
 	ctrl.drawingEnabled=false;
@@ -54,10 +56,10 @@ function CqNgUi($element,$scope, $rootScope){
 	};
 
 	// Data for all the menus
-	ctrl.themes=[{
-		"name": "Default",
-		"settings": // the default theme settings
-			{
+	ctrl.themes=[
+		{
+			"name": "Default",
+			"settings": { // the default theme settings
 				"chart": {
 					"Axis Text": { "color": "rgba(197,199,201,1)" },
 					"Background": { "color": "rgba(28,42,53,1)" },
@@ -73,8 +75,11 @@ function CqNgUi($element,$scope, $rootScope){
 					"Mountain": { "color": "rgba(102,202,196,0.498039)" }
 				}
 			}
-	},
-		{"name":"+ New Theme"}];
+		},
+		{
+			"name": "+ New Theme"
+		}
+	];
 
 	ctrl.studies={
 		list:Object.keys(CIQ.Studies.studyLibrary),

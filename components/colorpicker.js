@@ -1,3 +1,5 @@
+ColorPicker.$inject = ['$element', '$rootScope', '$scope'];
+
 function ColorPicker($element,$rootScope, $scope) {
 	var ctrl = this;
 	ctrl.posLeft=0;
@@ -33,7 +35,7 @@ function ColorPicker($element,$rootScope, $scope) {
 }
 
 var colorPickerColors = [
-    "ffffff","ffd0cf","ffd9bb","fff56c","eaeba3","d3e8ae","adf3ec","ccdcfa","d9c3eb",
+	"ffffff","ffd0cf","ffd9bb","fff56c","eaeba3","d3e8ae","adf3ec","ccdcfa","d9c3eb",
 	"efefef","eb8b87","ffb679","ffe252","e2e485","c5e093","9de3df","b1c9f8","c5a6e1",
 	"cccccc","e36460","ff9250","ffcd2b","dcdf67","b3d987","66cac4","97b8f7","b387d7",
 	"9b9b9b","dd3e39","ff6a23","faaf3a","c9d641","8bc176","33b9b0","7da6f5","9f6ace",

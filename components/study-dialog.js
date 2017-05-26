@@ -1,3 +1,5 @@
+StudyDialog.$inject = ['$scope', '$rootScope', '$timeout'];
+
 function StudyDialog($scope, $rootScope, $timeout) {
 	var ctrl = this;
 	ctrl.launchDialog=false;
@@ -34,7 +36,7 @@ function StudyDialog($scope, $rootScope, $timeout) {
 	ctrl.showMenu=function(){
 		$rootScope.$broadcast('showOverlayMenu', {sd:arguments[0].sd, ciq:ctrl.ciq});
 	};
-	
+
 	ctrl.showDialog=function(params){
 		ctrl.studyHelper=new CIQ.Studies.DialogHelper({sd:params.sd,stx:params.stx});
 		$scope.inputs=ctrl.studyHelper.inputs;
@@ -86,7 +88,7 @@ function StudyDialog($scope, $rootScope, $timeout) {
 			currentParams[params[y].name+'Value']=params[y].value;
 			currentParams[params[y].name+'Color']=params[y].color;
 		}
-		
+
 		ctrl.studyHelper.updateStudy({inputs:currentInputs, outputs:currentOutputs, parameters:currentParams});
 	};
 

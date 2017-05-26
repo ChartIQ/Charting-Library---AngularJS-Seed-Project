@@ -1,3 +1,5 @@
+OverlayMenu.$inject = ['$scope', '$rootScope'];
+
 function OverlayMenu($scope, $rootScope) {
 	var ctrl = this;
 	ctrl.launchMenu=null;
