@@ -1,3 +1,5 @@
+ThemeDialog.$inject = ['$scope', '$rootScope'];
+
 function ThemeDialog($scope, $rootScope) {
 	var ctrl = this;
 	ctrl.launchDialog=false;

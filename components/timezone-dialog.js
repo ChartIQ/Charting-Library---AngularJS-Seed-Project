@@ -1,3 +1,5 @@
+TimezoneDialog.$inject = ['$scope'];
+
 function TimezoneDialog($scope) {
 	var ctrl = this;
 	ctrl.launchDialog=false;
@@ -35,7 +37,7 @@ function TimezoneDialog($scope) {
 		}
 		if(ctrl.ciq.chart.symbol) ctrl.ciq.draw();
 		ctrl.closeMe();
-	}
+	};
 }
 
 angular.module('cqNgApp').component('timezoneDialog', {

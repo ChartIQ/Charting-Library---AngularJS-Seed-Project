@@ -1,3 +1,5 @@
+DrawingToolbar.$inject = ['$rootScope', '$filter'];
+
 function DrawingToolbar($rootScope, $filter) {
 	var ctrl = this;
 	ctrl.launchToolbar=false;
@@ -126,7 +128,7 @@ function DrawingToolbar($rootScope, $filter) {
 				ctrl.italic=false;
 			}
 		}
-	}
+	};
 }
 
 angular.module('cqNgApp').component('drawingToolbar', {

@@ -1,3 +1,5 @@
+CqNgChart.$inject = ['$timeout', 'quoteFeed'];
+
 function CqNgChart($timeout, quoteFeed){
 	var ctrl=this; //use ctrl as this for the sole purpose of consistency both in and out of the functions
 	ctrl.loader=null;
