@@ -1,6 +1,14 @@
-DrawingToolbar.$inject = ['$rootScope', '$filter'];
+angular
+	.module('cqNgApp')
+	.component('drawingToolbar', {
+		controller: DrawingToolbar,
+		templateUrl: 'templates/drawing-toolbar.html',
+		controllerAs: 'drawingToolbar'
+	});
 
-function DrawingToolbar($rootScope, $filter) {
+DrawingToolbar.$inject = ['$rootScope', '$filter', 'CIQ'];
+
+function DrawingToolbar($rootScope, $filter, CIQ) {
 	var ctrl = this;
 	ctrl.launchToolbar = false;
 	ctrl.activeOutput = {};
@@ -130,9 +138,3 @@ function DrawingToolbar($rootScope, $filter) {
 		}
 	};
 }
-
-angular.module('cqNgApp').component('drawingToolbar', {
-	controller: DrawingToolbar,
-	templateUrl: 'templates/drawing-toolbar.html',
-	controllerAs: 'drawingToolbar'
-});

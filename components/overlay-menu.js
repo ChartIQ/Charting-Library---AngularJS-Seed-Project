@@ -1,3 +1,11 @@
+angular
+	.module('cqNgApp')
+	.component('overlayMenu', {
+		controller: OverlayMenu,
+		templateUrl: 'templates/overlay-menu.html',
+		controllerAs: 'overlayMenu'
+	});
+
 OverlayMenu.$inject = ['$scope', '$rootScope'];
 
 function OverlayMenu($scope, $rootScope) {
@@ -35,9 +43,3 @@ function OverlayMenu($scope, $rootScope) {
 		ctrl.closeMe();
 	};
 }
-
-angular.module('cqNgApp').component('overlayMenu', {
-	controller: OverlayMenu,
-	templateUrl: 'templates/overlay-menu.html',
-	controllerAs: 'overlayMenu'
-});

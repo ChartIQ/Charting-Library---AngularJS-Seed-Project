@@ -1,5 +1,10 @@
-angular.module('cqNgApp').service('quoteFeed', function () {
+angular
+	.module('cqNgApp')
+	.service('quoteFeed', service)
 
+service.$inject = ['CIQ'];
+
+function service(CIQ) {
 
 	// -------------------------------------------------------------------------------------------
 	// Copyright 2012-2017 by ChartIQ, Inc
@@ -12,13 +17,7 @@ angular.module('cqNgApp').service('quoteFeed', function () {
 	// Copyright 2012-2017 by ChartIQ, Inc
 	// -------------------------------------------------------------------------------------------
 
-	/*    eslint   */
-	/*   jshint   */
-	/* globals CIQ */
-	/* global CIQ */
-
 	var quotefeedSimulator = {}; // the quotefeed object
-	var quoteFeedSimulator = quotefeedSimulator; // prevent typos
 
 	/**
 	 * Convenience function for generating a globally unique id (GUID).
@@ -120,4 +119,4 @@ angular.module('cqNgApp').service('quoteFeed', function () {
 		return quotefeedSimulator;
 	};
 
-});
+}

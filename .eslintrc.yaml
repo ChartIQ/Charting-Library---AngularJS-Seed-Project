@@ -1,0 +1,68 @@
+---
+env:
+  browser: true
+  commonjs: true
+extends:
+  - eslint:recommended
+globals:
+  angular: true
+parserOptions:
+  ecmaVersion: 5
+  sourceType: module
+plugins:
+  - angular
+rules:
+  #angular/angularelement: error
+  #angular/component-limit:
+    #- error
+    #- 1
+  angular/constant-name: off
+  angular/controller-as: error
+  #angular/controller-as-route: error
+  angular/controller-as-vm:
+    - error
+    - ctrl
+  angular/deferred: error
+  angular/definedundefined: off
+  #angular/di:
+    #- error
+    #- $inject
+    #- matchNames: false
+  angular/di-order:
+    - warn
+    - true
+    - case_insensitive
+  angular/di-unused: error
+  #angular/document-service: error
+  angular/dumb-inject: error
+  angular/empty-controller: error
+  #angular/file-name:
+    #- error
+    #- nameStyle: dash
+    #- ignorePrefix: /^[a-z]+\/
+  #angular/foreach: error
+  #angular/function-type: error
+  #angular/interval-service: error
+  #angular/json-functions: error
+  #angular/log: error
+  #angular/module-dependency-order: error
+  angular/module-getter: error
+  angular/module-name:
+    - error
+    - cqNgApp
+  angular/module-setter: off
+  angular/on-destroy: error
+  #angular/service-name: off
+  #angular/timeout-service: error
+  #angular/typecheck-array: error
+  #angular/typecheck-date: error
+  #angular/typecheck-function: error
+  #angular/typecheck-number: error
+  #angular/typecheck-object: error
+  #angular/typecheck-string: error
+  #angular/watchers-execution: error
+  #angular/window-service: error
+  no-console: off
+  semi:
+    - error
+    - always

@@ -1,6 +1,14 @@
-CqNgUi.$inject = ['$element', '$scope', '$rootScope'];
+angular
+	.module('cqNgApp')
+	.component('cqNgUi', {
+		controller: CqNgUi,
+		templateUrl: 'templates/cq-ng-ui.html',
+		controllerAs: 'cqNgUi'
+	});
 
-function CqNgUi($element, $scope, $rootScope) {
+CqNgUi.$inject = ['$element', '$scope', '$rootScope', 'CIQ'];
+
+function CqNgUi($element, $scope, $rootScope, CIQ) {
 	var ctrl = this;
 	ctrl.drawingEnabled = false;
 
@@ -278,9 +286,3 @@ function CqNgUi($element, $scope, $rootScope) {
 		selectedOption: {type: 'bar', label: 'Bar'}
 	};
 }
-
-angular.module('cqNgApp').component('cqNgUi', {
-	controller: CqNgUi,
-	templateUrl: 'templates/cq-ng-ui.html',
-	controllerAs: 'cqNgUi'
-});
