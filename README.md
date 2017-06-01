@@ -28,11 +28,9 @@ A copy of the ChartIQ library, version 3.0+ is required for this to work out of 
 
 Copy (or symlink) the ChartIQ library's js and css folders inside `chartiq/` as `js` and `css`, respectively.
 
-In app.js, change the baseUrl to match the path of your ChartIQ js folder. This is how require.js knows where to start looking for the required files.
-
 ```sh
 npm install # This will install all dependencies
-npm start # This will start the dev server
+npm start # This will start the local dev server
 ```
 
 This browser will automatically launch with the url `http://localhost:3000/angular-example-1.html`.
