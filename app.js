@@ -51,4 +51,4 @@ angular
 				return match.charAt(0).toUpperCase() + match.substr(1);
 			});
 		};
-	}])
+	}]);

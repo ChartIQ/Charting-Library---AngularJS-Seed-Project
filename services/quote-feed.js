@@ -1,6 +1,6 @@
 angular
 	.module('cqNgApp')
-	.service('quoteFeed', service)
+	.service('quoteFeed', service);
 
 service.$inject = ['CIQ'];
 

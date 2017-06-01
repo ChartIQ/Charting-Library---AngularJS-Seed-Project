@@ -81,7 +81,7 @@ function CqNgChart($$$, $timeout, CIQ, quoteFeed) {
 					color += letters[Math.floor(Math.random() * 16)];
 				}
 				return color;
-			}
+			};
 
 			ctrl.ciq.addSeries(ctrl.symbolComparison, {
 				isComparison: true,
