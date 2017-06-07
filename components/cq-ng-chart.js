@@ -1,6 +1,22 @@
-CqNgChart.$inject = ['$timeout', 'quoteFeed'];
+// The chart component
+angular
+	.module('cqNgApp')
+	.component('cqNgChart', {
+		require: {
+			parent: '?^cqNgUi'
+		}, //children can gain access to parent with angular
+		controller: CqNgChart,
+		templateUrl: 'templates/cq-ng-chart.html',
+		controllerAs: 'cqNgChart', //we will reference this component elsewhere with this name
+		bindings: {
+			symbolInput: '@',
+			symbolComparison: '@'
+		}
+	});
 
-function CqNgChart($timeout, quoteFeed) {
+CqNgChart.$inject = ['$$$', '$timeout', 'CIQ', 'quoteFeed'];
+
+function CqNgChart($$$, $timeout, CIQ, quoteFeed) {
 	var ctrl = this; //use ctrl as this for the sole purpose of consistency both in and out of the functions
 	ctrl.loader = null;
 
@@ -58,14 +74,14 @@ function CqNgChart($timeout, quoteFeed) {
 		if (ctrl.symbolComparison) {
 			if (!ctrl.ciq.callbacks.symbolChange) ctrl.ciq.callbacks.symbolChange = this.updateComparisonSeries;
 			// Note that this color generator has a bias toward darker colors. Just needed a quick solution here.
-			function getRandomColor() {
+			var getRandomColor = function() {
 				var letters = '0123456789ABCDEF';
 				var color = '#';
 				for (var i = 0; i < 6; i++) {
 					color += letters[Math.floor(Math.random() * 16)];
 				}
 				return color;
-			}
+			};
 
 			ctrl.ciq.addSeries(ctrl.symbolComparison, {
 				isComparison: true,
@@ -146,17 +162,3 @@ function CqNgChart($timeout, quoteFeed) {
 		}
 	};
 }
-
-// The chart component
-angular.module('cqNgApp').component('cqNgChart', {
-	require: {parent: '?^cqNgUi'}, //children can gain access to parent with angular
-	controller: CqNgChart,
-	templateUrl: 'templates/cq-ng-chart.html',
-	controllerAs: 'cqNgChart', //we will reference this component elsewhere with this name
-	bindings: {
-		symbolInput: '@',
-		symbolComparison: '@'
-	}
-});
-
-

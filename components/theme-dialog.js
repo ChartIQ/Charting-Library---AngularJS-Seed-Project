@@ -1,6 +1,17 @@
-ThemeDialog.$inject = ['$scope', '$rootScope'];
+angular
+	.module('cqNgApp')
+	.component('themeDialog', {
+		controller: ThemeDialog,
+		templateUrl: 'templates/theme-dialog.html',
+		controllerAs: 'themeDialog',
+		bindings: {
+			customName: '@'
+		}
+	});
 
-function ThemeDialog($scope, $rootScope) {
+ThemeDialog.$inject = ['$scope', '$rootScope', 'CIQ'];
+
+function ThemeDialog($scope, $rootScope, CIQ) {
 	var ctrl = this;
 	ctrl.launchDialog = false;
 	ctrl.activeOutput = {};
@@ -93,12 +104,3 @@ function ThemeDialog($scope, $rootScope) {
 		});
 	};
 }
-
-angular.module('cqNgApp').component('themeDialog', {
-	controller: ThemeDialog,
-	templateUrl: 'templates/theme-dialog.html',
-	controllerAs: 'themeDialog',
-	bindings: {
-		customName: '@'
-	}
-});

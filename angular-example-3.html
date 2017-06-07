@@ -12,22 +12,22 @@
 	<!-- Include angular.js -->
 	<script data-require="angular.js@1.5.x" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
 
-	<!-- Include our app and other js files -->
-	<script src="require.js"></script>
+	<!-- Include ChartIQ library -->
+	<script src="chartiq/js/chartiq.js"></script>
 
 	<script src="app.js"></script>
-	<script src="./components/colorpicker.js"></script>
-	<script src="./components/cq-ng-chart.js"></script>
-	<script src="./components/study-dialog.js"></script>
-	<script src="./components/theme-dialog.js"></script>
-	<script src="./components/timezone-dialog.js"></script>
-	<script src="./components/drawing-toolbar.js"></script>
-	<script src="./components/cq-ng-ui.js"></script>
-	<script src="./components/overlay-menu.js"></script>
-	<script src="./services/QuoteFeed.js"></script>
+	<script src="components/colorpicker.js"></script>
+	<script src="components/cq-ng-chart.js"></script>
+	<script src="components/study-dialog.js"></script>
+	<script src="components/theme-dialog.js"></script>
+	<script src="components/timezone-dialog.js"></script>
+	<script src="components/drawing-toolbar.js"></script>
+	<script src="components/cq-ng-ui.js"></script>
+	<script src="components/overlay-menu.js"></script>
+	<script src="services/quote-feed.js"></script>
 
 </head>
-<body class="ciq-night">
+<body class="ciq-night" ng-app="cqNgApp">
 	<cq-ng-ui></cq-ng-ui>
 	<overlay-menu></overlay-menu>
 	<color-picker></color-picker>

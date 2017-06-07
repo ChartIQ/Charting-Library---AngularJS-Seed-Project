@@ -1,6 +1,14 @@
-StudyDialog.$inject = ['$scope', '$rootScope', '$timeout'];
+angular
+	.module('cqNgApp')
+	.component('studyDialog', {
+		controller: StudyDialog,
+		templateUrl: 'templates/study-dialog.html',
+		controllerAs: 'studyDialog'
+	});
 
-function StudyDialog($scope, $rootScope, $timeout) {
+StudyDialog.$inject = ['$scope', '$rootScope', '$timeout', 'CIQ'];
+
+function StudyDialog($scope, $rootScope, $timeout, CIQ) {
 	var ctrl = this;
 	ctrl.launchDialog = false;
 	ctrl.studyHelper = {};
@@ -103,9 +111,3 @@ function StudyDialog($scope, $rootScope, $timeout) {
 		});
 	};
 }
-
-angular.module('cqNgApp').component('studyDialog', {
-	controller: StudyDialog,
-	templateUrl: 'templates/study-dialog.html',
-	controllerAs: 'studyDialog'
-});

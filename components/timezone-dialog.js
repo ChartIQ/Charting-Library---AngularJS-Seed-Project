@@ -1,6 +1,14 @@
-TimezoneDialog.$inject = ['$scope'];
+angular
+	.module('cqNgApp')
+	.component('timezoneDialog', {
+		controller: TimezoneDialog,
+		templateUrl: 'templates/timezone-dialog.html',
+		controllerAs: 'timezoneDialog'
+	});
 
-function TimezoneDialog($scope) {
+TimezoneDialog.$inject = ['$scope', 'CIQ'];
+
+function TimezoneDialog($scope, CIQ) {
 	var ctrl = this;
 	ctrl.launchDialog = false;
 	ctrl.timezones = CIQ.timeZoneMap;
@@ -39,9 +47,3 @@ function TimezoneDialog($scope) {
 		ctrl.closeMe();
 	};
 }
-
-angular.module('cqNgApp').component('timezoneDialog', {
-	controller: TimezoneDialog,
-	templateUrl: 'templates/timezone-dialog.html',
-	controllerAs: 'timezoneDialog'
-});
