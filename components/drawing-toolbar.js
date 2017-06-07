@@ -53,9 +53,8 @@ function DrawingToolbar($rootScope, $filter) {
 			// Sync the defaults for font tool
 			var style = ctrl.ciq.canvasStyle("stx_annotation");
 
-			var size = style.fontSize;
-			ctrl.ciq.currentVectorParameters.annotation.font.size=size;
-			ctrl.fontSize = size;
+			ctrl.ciq.currentVectorParameters.annotation.font.size=style.fontSize;
+			ctrl.fontSize = style.fontSize;
 			ctrl.ciq.currentVectorParameters.annotation.font.family=style.fontFamily;
 			ctrl.fontFamily = style.fontFamily;
 			ctrl.ciq.currentVectorParameters.annotation.font.style=style.fontStyle;

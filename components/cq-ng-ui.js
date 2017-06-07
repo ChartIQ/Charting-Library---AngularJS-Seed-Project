@@ -31,6 +31,10 @@ function CqNgUi($element,$scope, $rootScope){
 		$rootScope.$broadcast('showTimezoneDialog', ctrl.cqNgChart.ciq);
 	};
 
+	ctrl.launchShareDialog=function(){
+		$rootScope.$broadcast('showShareDialog', ctrl.cqNgChart.ciq);
+	};
+
 	ctrl.toggleDrawingToolbar=function(){
 		var callback=function(toolbarOn){
 			ctrl.drawingEnabled=toolbarOn;

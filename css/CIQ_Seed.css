@@ -222,7 +222,6 @@ nav {
 menu-select {
 	font-size: 9pt;
 	vertical-align: middle;
-	display: inline-block;
 	padding: 5px 5px;
 	font-weight: 300;
 	background: transparent;
@@ -474,11 +473,6 @@ div.cq-close{
 	height:20px;
 	width:20px;
 	border:1px solid black;
-}
-#colorPicker{
-	position:relative;
-	width: 200px;
-	z-index:32;
 }
 .color-picker-options {/* This is the actual color picker block */
 	position:absolute;
@@ -756,4 +750,19 @@ div.quick-link{
 
 div.quick-link:hover{
 	color:white;
+}
+
+div.ciq-footer div.share{
+	float: left;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+#shareDialog{
+	min-height:250px;
+}
+
+div.shareMsg{
+	font-family: 'Roboto', sans-serif;
+	color: #666;
 }
