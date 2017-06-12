@@ -1,4 +1,9 @@
-# Charting-Library---Angular-1.5-Seed-Project
+## Questions and support
+
+If you have questions or get stuck using this project or the ChartIQ library, the dev support team can be reached through [dev@chartiq.com](mailto:dev@chartiq.com).
+
+
+# Charting-Library---AngularJS-Seed-Project
 
 A basic build of the ChartIQ library within the Angular 1.5.7 framework. This provides an example of how to implement the most common elements in the charting library. This is not a comprehensive example, more like a good starting point for an Angular developer.
 
@@ -35,10 +40,6 @@ npm start # This will start the local dev server
 
 This browser will automatically launch with the url `http://localhost:3000/angular-example-1.html`.
 You can change the 1 in `angular-example-1.html` to preview the other examples.
-
-## Questions and support
-
-If you have questions or get stuck using this project or the ChartIQ library, the dev support team can be reached through [dev@chartiq.com](mailto:dev@chartiq.com).
 
 ## Contributing to this project
 
