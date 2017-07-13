@@ -79,7 +79,7 @@ nav {
 	height: 27px;
 }
 
-.overlayMenu{
+.overlay-menu{
 	width:130px;
 	display:inline-block;
 	position: fixed;
@@ -90,13 +90,13 @@ nav {
 	border-radius: 1px;
 }
 
-.overlayMenu div{
+.overlay-menu div{
 	padding: 0 20px;
 	cursor: pointer;
 	line-height: 27px;
 }
 
-.overlayMenu div:hover{
+.overlay-menu div:hover{
 	background: #f3f3f3;
 }
 

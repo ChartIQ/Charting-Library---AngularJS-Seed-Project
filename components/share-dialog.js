@@ -1,4 +1,12 @@
-function ShareDialog($rootScope, $scope) {
+angular.module('cqNgApp').component('shareDialog', {
+	controller:ShareDialog,
+	templateUrl: 'templates/share-dialog.html',
+	controllerAs:'shareDialog'
+});
+
+ShareDialog.$inject = ['$rootScope', '$scope', 'CIQ'];
+
+function ShareDialog($rootScope, $scope, CIQ) {
 	var ctrl = this;
 	ctrl.launchDialog=false;
 	ctrl.ciq=null;
@@ -27,9 +35,3 @@ function ShareDialog($rootScope, $scope) {
 		});
 	};
 }
-
-angular.module('cqNgApp').component('shareDialog', {
-	controller:ShareDialog,
-	templateUrl: 'templates/share-dialog.html',
-	controllerAs:'shareDialog'
-});
