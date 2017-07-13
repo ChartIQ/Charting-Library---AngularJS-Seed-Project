@@ -1,14 +1,14 @@
 <nav class="ciq-nav">
 	<div class="left">
 		<span class="symbol-frame">
-			<input id="symbolInput" placeholder="Enter Symbol" type="text" ng-keypress="cqNgUi.cqNgChart.updateSymbolInput($event)"><div class="symbol-btn" ng-click="cqNgUi.cqNgChart.updateSymbolInput($event)"></div>
+			<input id="symbol-input" placeholder="Enter Symbol" type="text" ng-keypress="cqNgUi.cqNgChart.updateSymbolInput($event)"><div class="symbol-btn" ng-click="cqNgUi.cqNgChart.updateSymbolInput($event)"></div>
 		</span>
 		<span class="symbol-frame">
-			<input id="symbolCompareInput" placeholder="Add Comparison" type="text" ng-keypress="cqNgUi.cqNgChart.updateSymbolComparison($event)"><div class="comparison-btn" ng-click="cqNgUi.cqNgChart.updateSymbolComparison($event)"></div>
+			<input id="symbol-compare-input" placeholder="Add Comparison" type="text" ng-keypress="cqNgUi.cqNgChart.updateSymbolComparison($event)"><div class="comparison-btn" ng-click="cqNgUi.cqNgChart.updateSymbolComparison($event)"></div>
 		</span>
 	</div>
 	<div class="right">
-		<menu-select id="periodicitySelect">
+		<menu-select id="periodicity-select">
 			<span class="title">{{cqNgUi.cqNgChart.ciq.layout | periodicity:cqNgUi.periodicity.options}}</span>
 			<menu-select-options class="menu-hover">
 				<menu-option class="option" ng-repeat="periodicity in cqNgUi.periodicity.options" ng-click="cqNgUi.cqNgChart.setPeriodicity(periodicity.period, periodicity.interval)"><span>{{periodicity.label}}</span></menu-option>

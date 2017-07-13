@@ -1,9 +1,9 @@
 <div class="dialog-overlay" ng-if="shareDialog.launchDialog">
-	<div class="dialog" id="shareDialog">
+	<div class="dialog share-dialog">
 		<div class="cq-close" ng-click="shareDialog.closeMe();"></div>
 		<h3>Share Your Chart</h3>
-		<div class="shareMsg">Press this button to generate a shareable image:</div>
+		<div class="share-msg">Press this button to generate a shareable image:</div>
 		<button ng-click="shareDialog.renderShareLink()">Create Image</button>
-		<div class="share-link-div"></div>
+		<div class="share-link-div">{{shareDialog.shareLink}}</div>
 	</div>
 </div>

@@ -1,22 +1,14 @@
-function ShareDialog($rootScope) {
+function ShareDialog($rootScope, $scope) {
 	var ctrl = this;
 	ctrl.launchDialog=false;
 	ctrl.ciq=null;
+	ctrl.shareLink="";
 
 	ctrl.$postLink=function(){
-		console.log(CIQ);
 		$rootScope.$on('showShareDialog', function(event, params){
 			ctrl.ciq=params;
 			ctrl.showDialog();
 		});
-		CIQ.Share.createAlternateImage=function(ciq,cb) {
-			var image=document.createElement("img");
-			image.src=ciq.chart.canvas.toDataURL("image/png");
-			var canvas=document.createElement("canvas");
-			var context=canvas.getContext("2d");
-			context.drawImage(image, 0, 0, ciq.chart.canvas.width, ciq.chart.canvas.height);
-			return cb(null,canvas);
-		};
 	};
 
 	ctrl.showDialog=function(){
@@ -25,12 +17,13 @@ function ShareDialog($rootScope) {
 
 	ctrl.closeMe=function(){
 		ctrl.launchDialog=false;
+		ctrl.shareLink="";
 	};
 
 	ctrl.renderShareLink=function(){
-		CIQ.Share.createAlternateImage(ctrl.ciq, function(err, canvas){
-			console.log(canvas);
-			CIQ.localStorage.setItem("manualImg",canvas.toDataURL("image/jpeg"));
+		CIQ.Share.shareChart(ctrl.ciq, {}, function(link){
+			ctrl.shareLink=link;
+			$scope.$apply();
 		});
 	};
 }
