@@ -41,9 +41,13 @@ function CqNgUi($element, $scope, $rootScope, CIQ) {
 		$rootScope.$broadcast('showTimezoneDialog', ctrl.cqNgChart.ciq);
 	};
 
-	ctrl.toggleDrawingToolbar = function () {
-		var callback = function (toolbarOn) {
-			ctrl.drawingEnabled = toolbarOn;
+	ctrl.launchShareDialog=function(){
+		$rootScope.$broadcast('showShareDialog', ctrl.cqNgChart.ciq);
+	};
+
+	ctrl.toggleDrawingToolbar=function(){
+		var callback=function(toolbarOn){
+			ctrl.drawingEnabled=toolbarOn;
 			//resize the chart based on if the toolbar is now open or closed
 			var elem = document.getElementById("chartContainer");
 			if (toolbarOn)

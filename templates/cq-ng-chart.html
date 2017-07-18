@@ -1,10 +1,10 @@
-<div id="chartContainer" class="chartContainer ciq-chart">
+<div id="chartContainer" class="chartContainer ciq-chart" style="position: relative">
 	<div ng-class="cqNgChart.loader ? 'loader' : ''"></div>
 	<div class="comparisons">
-		<div class="comparisonWrapper" ng-repeat="comparison in cqNgChart.ciq.chart.series">
-			<div class="chartSeriesColor" style="background-color:{{comparison.parameters.color}}"></div>
-			<div class="chartSeries">{{comparison.display}}</div>
-			<div class="deleteSeries" ng-click="cqNgChart.removeSeries(comparison.display)"></div>
+		<div class="comparison-wrapper" ng-repeat="comparison in cqNgChart.ciq.chart.series">
+			<div class="chart-series-color" style="background-color:{{comparison.parameters.color}}"></div>
+			<div class="chart-series">{{comparison.display}}</div>
+			<div class="delete-series" ng-click="cqNgChart.removeSeries(comparison.display)"></div>
 		</div>
 	</div>
 </div>

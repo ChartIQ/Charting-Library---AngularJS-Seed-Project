@@ -79,7 +79,7 @@ nav {
 	height: 27px;
 }
 
-.overlayMenu{
+.overlay-menu{
 	width:130px;
 	display:inline-block;
 	position: fixed;
@@ -90,17 +90,17 @@ nav {
 	border-radius: 1px;
 }
 
-.overlayMenu div{
+.overlay-menu div{
 	padding: 0 20px;
 	cursor: pointer;
 	line-height: 27px;
 }
 
-.overlayMenu div:hover{
+.overlay-menu div:hover{
 	background: #f3f3f3;
 }
 
-#symbolCompareInput, #symbolInput{
+#symbol-compare-input, #symbol-input{
 	width:100%;
 	border-radius: 1px;
 	display: inline;
@@ -108,8 +108,8 @@ nav {
 	height: 27px;
 }
 
-#symbolInput:hover, #symbolCompareInput:hover,
-#symbolInput:focus, #symbolCompareInput:focus{
+#symbol-input:hover, #symbol-compare-input:hover,
+#symbol-input:focus, #symbol-compare-input:focus{
 	transition: background .60s 0s;
 	background-color: #233542;
 }
@@ -222,7 +222,6 @@ nav {
 menu-select {
 	font-size: 9pt;
 	vertical-align: middle;
-	display: inline-block;
 	padding: 5px 5px;
 	font-weight: 300;
 	background: transparent;
@@ -348,7 +347,6 @@ cq-plus {
 	min-height: 400px;
 	max-height: 430px;
 	overflow: auto;
-	cursor: pointer;
 	font-weight: 300;
 	font-size: 9pt;
 	line-height: 16pt;
@@ -474,11 +472,6 @@ div.cq-close{
 	height:20px;
 	width:20px;
 	border:1px solid black;
-}
-#colorPicker{
-	position:relative;
-	width: 200px;
-	z-index:32;
 }
 .color-picker-options {/* This is the actual color picker block */
 	position:absolute;
@@ -660,7 +653,7 @@ span.title.ciq-dashed-5{
 	border-top-width: 5px;
 }
 
-.chartSeries{
+.chart-series{
 	display:inline-block;
 	position:relative;
 	left:12px;
@@ -670,7 +663,7 @@ span.title.ciq-dashed-5{
 	top: 4px;
 }
 
-.chartSeriesColor{
+.chart-series-color{
 	display:inline-block;
 	position:relative;
 	left:0;
@@ -679,7 +672,7 @@ span.title.ciq-dashed-5{
 	top:7px;
 }
 
-.deleteSeries {
+.delete-series {
 	height: 19px;
 	width: 20px;
 	display: inline-block;
@@ -693,7 +686,7 @@ span.title.ciq-dashed-5{
 	opacity:0;
 }
 
-.deleteSeries:hover{
+.delete-series:hover{
 	opacity:1;
 }
 
@@ -713,7 +706,7 @@ span.title.ciq-dashed-5{
 	background-color: #21323f;
 }
 
-.comparisonWrapper:hover .deleteSeries{
+.comparisonWrapper:hover .delete-series{
 	opacity:.6;
 }
 
@@ -756,4 +749,31 @@ div.quick-link{
 
 div.quick-link:hover{
 	color:white;
+}
+
+div.ciq-footer div.share{
+	float: left;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.share-dialog button{
+	cursor: pointer;
+	margin-left:29%;
+}
+
+div.dialog.share-dialog{
+	min-height:225px;
+	max-height: 225px;
+}
+
+div.share-msg, div.share-link-div{
+	font-family: 'Roboto', sans-serif;
+	color: #666;
+	margin: 10px 0;
+}
+
+div.share-link-div{
+	min-height: 40px;
+	margin:20px 10px;
 }
