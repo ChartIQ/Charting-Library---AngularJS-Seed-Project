@@ -1,3 +1,7 @@
+# WARNING: AngularJS is no longer supported
+
+If you are looking start a new project it is STRONGLY advised to not use AngularJS. Development on the AngularJS framework has ended and it is currently in a Long Term Support period. For more inforation see the [official support notice](https://docs.angularjs.org/misc/version-support-status). If you are looking to start a new Angular project, take a look at [Angular](https://angular.io) and [TypeScript](https://www.typescriptlang.org/index.html). Instead of this project, it is highly recommended that you look at our [Anguar Seed project](https://github.com/ChartIQ/Charting-Library---Angular-Seed-Project)
+
 ## Questions and support
 
 If you have questions or get stuck using this project or the ChartIQ library, the dev support team can be reached through [dev@chartiq.com](mailto:dev@chartiq.com).
